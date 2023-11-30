@@ -28,7 +28,7 @@ Partial Class Form3
         Me.global_timer = New System.Windows.Forms.Timer(Me.components)
         Me.move_timer = New System.Windows.Forms.Timer(Me.components)
         Me.Counting_Timer = New System.Windows.Forms.Timer(Me.components)
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.check_timer = New System.Windows.Forms.Timer(Me.components)
         Me.bullet = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.bullet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -36,12 +36,18 @@ Partial Class Form3
         '
         'fire_timer
         '
+        Me.fire_timer.Interval = 30
         '
         'move_timer
         '
+        Me.move_timer.Interval = 50
         '
         'Counting_Timer
         '
+        '
+        'check_timer
+        '
+        Me.check_timer.Interval = 200
         '
         'bullet
         '
@@ -83,7 +89,7 @@ Partial Class Form3
     Friend WithEvents global_timer As Timer
     Friend WithEvents move_timer As Timer
     Friend WithEvents Counting_Timer As Timer
-    Friend WithEvents Timer1 As Timer
+    Friend WithEvents check_timer As Timer
     Friend WithEvents bullet As PictureBox
     Friend WithEvents Label1 As Label
 End Class

@@ -14,6 +14,7 @@ Public Class Form3
 
     Dim zero As Integer = 0
     Dim count As Integer = 0
+    Dim check_count As Integer = -1
     Dim power As Integer = 0 '0~25
     Dim real_round As Integer = -1
     Dim round As Integer
@@ -126,19 +127,22 @@ Public Class Form3
                         player_health(i) -= 25
                         player_name(i).Text = "player" + (i + 1).ToString + " " + player_health(i).ToString
                     End If
+
                     fire_timer.Enabled = False
                     GameBody()
+                    check_count += 1
                     count += 1
                 End If
 
                 PictureBox_temp = ground
                 maxX2 = PictureBox_temp.Location.X + PictureBox_temp.Width
                 minX2 = PictureBox_temp.Location.X
-                maxY2 = PictureBox_temp.Location.Y + PictureBox_temp.Height
+                maxY2 = PictureBox_temp.Location.Y + PictureBox_temp.Height + 8
                 minY2 = PictureBox_temp.Location.Y
                 If maxX1 > minX2 And maxX2 > minX1 And maxY1 > minY2 And maxY2 > minY1 Then
                     fire_timer.Enabled = False
                     GameBody()
+                    check_count += 1
                     count += 1
                 End If
             End If
@@ -154,7 +158,7 @@ Public Class Form3
 
     Function Initialization()
         count = 0
-
+        check_count = 0
         fire_timer.Enabled = False
         IsKeyPressing = False
         movable = True
@@ -204,25 +208,27 @@ Public Class Form3
     Private Sub Fire_timer_Tick(sender As Object, e As EventArgs) Handles fire_timer.Tick
         If round Mod 2 Then
             bullet.Location = New Point(player(round).Location.X - 33 - x, route(x, pressing_time) - player(round).Height)
-            x += 15
+            x += 5
         Else
             bullet.Location = New Point(player(round).Location.X + 33 + x, route(x, pressing_time) - player(round).Height)
-            x += 15
+            x += 5
         End If
 
-        If x >= 35 Then
+
+        If check_count Mod 5 = 0 Then
             Bullet_check()
         End If
+        check_count += 1
     End Sub
-    '發射砲彈
+
 
     Private Sub Move_timer_Tick(sender As Object, e As EventArgs) Handles move_timer.Tick
         If move_direaction Then
-            player(round).Location = New Point(player(round).Location.X + 5, player(round).Location.Y)
-            player_name(round).Location = New Point(player_name(round).Location.X + 5, player_name(round).Location.Y)
+            player(round).Location = New Point(player(round).Location.X + 3, player(round).Location.Y)
+            player_name(round).Location = New Point(player_name(round).Location.X + 3, player_name(round).Location.Y)
         Else
-            player(round).Location = New Point(player(round).Location.X - 5, player(round).Location.Y)
-            player_name(round).Location = New Point(player_name(round).Location.X - 5, player_name(round).Location.Y)
+            player(round).Location = New Point(player(round).Location.X - 3, player(round).Location.Y)
+            player_name(round).Location = New Point(player_name(round).Location.X - 3, player_name(round).Location.Y)
         End If
     End Sub
 
@@ -273,11 +279,15 @@ Public Class Form3
             Counting_Timer.Stop()
             move_timer.Stop()
             count = 0
+            check_count = 0
             fire_timer.Enabled = True
+
+
             movable = False
 
         End If
 
     End Sub
+
 
 End Class
