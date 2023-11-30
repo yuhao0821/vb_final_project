@@ -13,17 +13,19 @@ Public Class Form3
     Public player_num As Integer
 
     Dim zero As Integer = 0
-    Dim real_round As Integer = 0
-    Dim round As Integer = 0
-    Dim pressing_time As Integer = 26
-    Dim temp As Integer
-    Dim x As Integer = 0
     Dim count As Integer = 0
+    Dim power As Integer = 0 '0~25
+    Dim real_round As Integer = -1
+    Dim round As Integer
+    Dim pressing_time As Integer
+    Dim temp As Integer
+    Dim x As Integer
 
-    Dim power As Double = 0 '0~25
+
 
     Dim IsKeyPressing As Boolean = False
     Dim move_direaction As Boolean
+    Dim movable As Boolean
 
     Dim ground As New PictureBox
     Dim PictureBox_temp As PictureBox
@@ -73,6 +75,8 @@ Public Class Form3
         ground.Location = New Point(0, 370)
         ground.Width = 800
         ground.Height = 80
+
+        Initialization()
 
     End Sub
 
@@ -150,8 +154,10 @@ Public Class Form3
 
     Function Initialization()
         count = 0
+
         fire_timer.Enabled = False
         IsKeyPressing = False
+        movable = True
         real_round += 1
         real_round = real_round Mod player_num
         If player_health(real_round) = 0 Then
@@ -231,12 +237,17 @@ Public Class Form3
         If e.KeyCode = 37 Then '左
             move_direaction = False
             IsKeyPressing = True
-            move_timer.Start()
+            If movable Then
+                move_timer.Start()
+            End If
+
 
         ElseIf e.KeyCode = 39 Then '右
             move_direaction = True
             IsKeyPressing = True
-            move_timer.Start()
+            If movable Then
+                move_timer.Start()
+            End If
         End If
 
         If e.KeyCode = 32 Then '空白鍵
@@ -260,8 +271,10 @@ Public Class Form3
             IsKeyPressing = False
             power = pressing_time
             Counting_Timer.Stop()
+            move_timer.Stop()
             count = 0
             fire_timer.Enabled = True
+            movable = False
 
         End If
 
