@@ -12,3 +12,5 @@
 	player named part done 育豪
 
 	changeable shooting direction done 育豪
+
+	save player direction done 育豪
