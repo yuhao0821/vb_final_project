@@ -113,6 +113,16 @@ Namespace My.Resources
         '''<summary>
         '''  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         '''</summary>
+        Friend ReadOnly Property 紅_拿槍_翻轉() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("紅_拿槍_翻轉", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        '''</summary>
         Friend ReadOnly Property 背景() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("背景", resourceCulture)
@@ -136,6 +146,16 @@ Namespace My.Resources
         Friend ReadOnly Property 藍_拿槍() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("藍_拿槍", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        '''</summary>
+        Friend ReadOnly Property 藍_拿槍_翻轉() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("藍_拿槍_翻轉", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

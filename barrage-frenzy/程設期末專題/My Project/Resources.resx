@@ -133,6 +133,9 @@
   <data name="紅_拿槍" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\紅 拿槍.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="紅_拿槍_翻轉" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\紅 拿槍 翻轉.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="背景" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\背景.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -141,5 +144,8 @@
   </data>
   <data name="藍_拿槍" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\藍 拿槍.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="藍_拿槍_翻轉" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\藍 拿槍 翻轉.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

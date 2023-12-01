@@ -179,5 +179,11 @@
   <ItemGroup>
     <None Include="Resources\箱子.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍 拿槍 翻轉.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\紅 拿槍 翻轉.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

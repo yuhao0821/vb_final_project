@@ -251,6 +251,11 @@ Public Class Form3
             IsKeyPressing = True
             If movable Then
                 face_direaction = False
+                If player(round).Tag = 1 Then
+                    player(round).Image = My.Resources.藍_拿槍_翻轉
+                Else
+                    player(round).Image = My.Resources.紅_拿槍
+                End If
                 move_timer.Start()
             End If
 
@@ -260,6 +265,11 @@ Public Class Form3
             IsKeyPressing = True
             If movable Then
                 face_direaction = True
+                If player(round).Tag = 1 Then
+                    player(round).Image = My.Resources.藍_拿槍
+                Else
+                    player(round).Image = My.Resources.紅_拿槍_翻轉
+                End If
                 move_timer.Start()
             End If
         End If
