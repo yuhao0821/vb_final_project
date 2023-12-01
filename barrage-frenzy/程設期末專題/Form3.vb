@@ -92,8 +92,7 @@ Public Class Form3
                     Form1.Close()
                 End If
             End If
-            End If
-
+        End If
         Return 0
     End Function
 
@@ -107,7 +106,51 @@ Public Class Form3
     End Function
     '計算彈道的二次函數 輸入power以及x值 return y
 
+    Function Initialization()
+        count = 0
+        check_count = 0
+        fire_timer.Enabled = False
+        IsKeyPressing = False
+        movable = True
+        real_round += 1
+        real_round = real_round Mod player_num
+        If player_health(real_round) = 0 Then
+            round = (real_round + 2) Mod player_num
+        Else
+            round = real_round
+        End If
+        For i As Integer = 0 To player_num - 1
+            If player_health(i) <= zero Then
+                player(i).Visible = False
+                player_name(i).Visible = False
+            End If
+        Next
 
+        x = 0
+        pressing_time = 26
+        bullet.Location = New Point(-1, -1)
+        Return Nothing
+    End Function
+
+
+    Function Winning_check() As Boolean
+        If player_num = 2 Then
+            If player_health(0) = 0 Then
+                MsgBox("red win")
+                Return True
+            ElseIf player_health(1) = 0 Then
+                MsgBox("blue win")
+                Return True
+            End If
+        ElseIf player_health(0) = 0 And player_health(2) = 0 Then
+            MsgBox("red win")
+            Return True
+        ElseIf player_health(1) = 0 And player_health(3) = 0 Then
+            MsgBox("blue win")
+            Return True
+        End If
+        Return False
+    End Function
     Function Bullet_check()
         maxX1 = bullet.Location.X + bullet.Width
         minX1 = bullet.Location.X
@@ -155,56 +198,6 @@ Public Class Form3
         Return Nothing
     End Function
     '射擊處理
-
-    Function Initialization()
-        count = 0
-        check_count = 0
-        fire_timer.Enabled = False
-        IsKeyPressing = False
-        movable = True
-        real_round += 1
-        real_round = real_round Mod player_num
-        If player_health(real_round) = 0 Then
-            round = (real_round + 2) Mod player_num
-        Else
-            round = real_round
-        End If
-        For i As Integer = 0 To player_num - 1
-            If player_health(i) <= zero Then
-                player(i).Visible = False
-                player_name(i).Visible = False
-            End If
-        Next
-
-
-
-        x = 0
-        pressing_time = 26
-        bullet.Location = New Point(-1, -1)
-        Return Nothing
-    End Function
-
-
-    Function Winning_check() As Boolean
-        If player_num = 2 Then
-            If player_health(0) = 0 Then
-                MsgBox("red win")
-                Return True
-            ElseIf player_health(1) = 0 Then
-                MsgBox("blue win")
-                Return True
-            End If
-        ElseIf player_health(0) = 0 And player_health(2) = 0 Then
-            MsgBox("red win")
-            Return True
-        ElseIf player_health(1) = 0 And player_health(3) = 0 Then
-            MsgBox("blue win")
-            Return True
-        End If
-
-        Return False
-    End Function
-
     Private Sub Fire_timer_Tick(sender As Object, e As EventArgs) Handles fire_timer.Tick
         If round Mod 2 Then
             bullet.Location = New Point(player(round).Location.X - 33 - x, route(x, pressing_time) - player(round).Height)
@@ -213,8 +206,6 @@ Public Class Form3
             bullet.Location = New Point(player(round).Location.X + 33 + x, route(x, pressing_time) - player(round).Height)
             x += 5
         End If
-
-
         If check_count Mod 5 = 0 Then
             Bullet_check()
         End If
@@ -281,10 +272,7 @@ Public Class Form3
             count = 0
             check_count = 0
             fire_timer.Enabled = True
-
-
             movable = False
-
         End If
 
     End Sub

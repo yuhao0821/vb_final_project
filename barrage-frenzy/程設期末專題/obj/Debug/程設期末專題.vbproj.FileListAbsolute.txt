@@ -58,3 +58,4 @@ E:\git-repos\vb_final_project\barrage-frenzy\程設期末專題\obj\Debug\程設
 E:\git-repos\vb_final_project\barrage-frenzy\程設期末專題\obj\Debug\程設期末專題.exe
 E:\git-repos\vb_final_project\barrage-frenzy\程設期末專題\obj\Debug\程設期末專題.xml
 E:\git-repos\vb_final_project\barrage-frenzy\程設期末專題\obj\Debug\程設期末專題.pdb
+E:\git-repos\vb_final_project\barrage-frenzy\程設期末專題\obj\Debug\程設期末專題.Form5.resources

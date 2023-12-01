@@ -20,7 +20,7 @@
         Form3.player_num = 4
         Form3.Show()
         Form3.Hide()
-        Form4.Show()
+        Form5.Show()
         Me.Hide()
 
     End Sub
