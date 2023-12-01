@@ -9,8 +9,10 @@ Public Class Form3
 
     Public player() As PictureBox
     Public player_name() As Label
+    Public player_health_graph() As Label
     Public player_health() As Integer
     Public player_num As Integer
+
 
     Dim zero As Integer = 0
     Dim count As Integer = 0
@@ -25,6 +27,7 @@ Public Class Form3
 
 
     Dim IsKeyPressing As Boolean = False
+    Dim face_direaction As Boolean
     Dim move_direaction As Boolean
     Dim movable As Boolean
 
@@ -44,29 +47,37 @@ Public Class Form3
         ReDim player(player_num - 1)
         ReDim player_name(player_num - 1)
         ReDim player_health(player_num - 1)
+        ReDim player_health_graph(player_num - 1)
 
         For i As Integer = 0 To player_num - 1
             player(i) = New PictureBox
             player_name(i) = New Label
+            player_health_graph(i) = New Label
             Me.Controls.Add(player(i))
             Me.Controls.Add(player_name(i))
+            Me.Controls.Add(player_health_graph(i))
             If i Mod 2 = 0 Then
                 player(i).Image = CType(My.Resources.ResourceManager.GetObject("藍_拿槍"), Image)
                 player(i).Location = New Point(i * 100 + 50, 320)
-                player_name(i).Text = "player" + (i + 1).ToString + " " + player_health(i).ToString
-                player_name(i).Location = New Point(player(i).Location.X + 25, player(i).Location.Y - 25)
+                player_name(i).Location = New Point(player(i).Location.X, player(i).Location.Y - 30)
                 player(i).Tag = 1
             Else
                 player(i).Image = My.Resources.紅_拿槍
                 player(i).Location = New Point(ClientSize.Width - (i) * 100, 320)
-                player_name(i).Text = "player" + (i + 1).ToString + " " + player_health(i).ToString
-                player_name(i).Location = New Point(player(i).Location.X + 25, player(i).Location.Y - 25)
+                player_name(i).Location = New Point(player(i).Location.X, player(i).Location.Y - 30)
                 player(i).Tag = -1
             End If
             player(i).Width = 50
             player(i).Height = 50
             player(i).SizeMode = PictureBoxSizeMode.StretchImage
+
             player_name(i).AutoSize = True
+
+            player_health_graph(i).Width = 50
+            player_health_graph(i).Height = 13
+            player_health_graph(i).Location = New Point(player(i).Location.X, player(i).Location.Y - 15)
+            player_health_graph(i).Text = "100 / 100"
+
             player_health(i) = 100
         Next i
 
@@ -129,6 +140,7 @@ Public Class Form3
         x = 0
         pressing_time = 26
         bullet.Location = New Point(-1, -1)
+        face_direaction = player(round).Tag + 1
         Return Nothing
     End Function
 
@@ -168,7 +180,7 @@ Public Class Form3
                 If maxX1 > minX2 And maxX2 > minX1 And maxY1 > minY2 And maxY2 > minY1 And player(round).Tag <> player(i).Tag And player_health(i) > 0 Then
                     If player_health(i) > 0 Then
                         player_health(i) -= 25
-                        player_name(i).Text = "player" + (i + 1).ToString + " " + player_health(i).ToString
+                        player_health_graph(i).Text = player_health(i).ToString + " / 100"
                     End If
 
                     fire_timer.Enabled = False
@@ -199,11 +211,12 @@ Public Class Form3
     End Function
     '射擊處理
     Private Sub Fire_timer_Tick(sender As Object, e As EventArgs) Handles fire_timer.Tick
-        If round Mod 2 Then
-            bullet.Location = New Point(player(round).Location.X - 33 - x, route(x, pressing_time) - player(round).Height)
+        'If round Mod 2 Then
+        If face_direaction Then
+            bullet.Location = New Point(player(round).Location.X + 33 + x, Route(x, pressing_time) - player(round).Height)
             x += 5
         Else
-            bullet.Location = New Point(player(round).Location.X + 33 + x, route(x, pressing_time) - player(round).Height)
+            bullet.Location = New Point(player(round).Location.X - 33 - x, Route(x, pressing_time) - player(round).Height)
             x += 5
         End If
         If check_count Mod 5 = 0 Then
@@ -217,9 +230,11 @@ Public Class Form3
         If move_direaction Then
             player(round).Location = New Point(player(round).Location.X + 3, player(round).Location.Y)
             player_name(round).Location = New Point(player_name(round).Location.X + 3, player_name(round).Location.Y)
+            player_health_graph(round).Location = New Point(player_health_graph(round).Location.X + 3, player_health_graph(round).Location.Y)
         Else
             player(round).Location = New Point(player(round).Location.X - 3, player(round).Location.Y)
             player_name(round).Location = New Point(player_name(round).Location.X - 3, player_name(round).Location.Y)
+            player_health_graph(round).Location = New Point(player_health_graph(round).Location.X - 3, player_health_graph(round).Location.Y)
         End If
     End Sub
 
@@ -235,6 +250,7 @@ Public Class Form3
             move_direaction = False
             IsKeyPressing = True
             If movable Then
+                face_direaction = False
                 move_timer.Start()
             End If
 
@@ -243,6 +259,7 @@ Public Class Form3
             move_direaction = True
             IsKeyPressing = True
             If movable Then
+                face_direaction = True
                 move_timer.Start()
             End If
         End If
@@ -262,6 +279,7 @@ Public Class Form3
         ElseIf e.KeyCode = 39 Then '右
             IsKeyPressing = False
             move_timer.Stop()
+
         End If
 
         If e.KeyCode = 32 Then '空白鍵

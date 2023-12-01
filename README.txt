@@ -10,3 +10,5 @@
 
 2023/12/01
 	player named part done 育豪
+
+	changeable shooting direction done 育豪
