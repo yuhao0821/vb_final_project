@@ -11,9 +11,9 @@ Public Class Form3
     Public player_name() As Label
     Public player_health_graph() As Label
     Public player_health() As Integer
+    Dim face_direaction() As Boolean
+
     Public player_num As Integer
-
-
     Dim zero As Integer = 0
     Dim count As Integer = 0
     Dim check_count As Integer = -1
@@ -27,7 +27,7 @@ Public Class Form3
 
 
     Dim IsKeyPressing As Boolean = False
-    Dim face_direaction As Boolean
+
     Dim move_direaction As Boolean
     Dim movable As Boolean
 
@@ -48,6 +48,7 @@ Public Class Form3
         ReDim player_name(player_num - 1)
         ReDim player_health(player_num - 1)
         ReDim player_health_graph(player_num - 1)
+        ReDim face_direaction(player_num - 1)
 
         For i As Integer = 0 To player_num - 1
             player(i) = New PictureBox
@@ -79,6 +80,9 @@ Public Class Form3
             player_health_graph(i).Text = "100 / 100"
 
             player_health(i) = 100
+
+            face_direaction(i) = player(i).Tag + 1
+
         Next i
 
         Me.Controls.Add(ground)
@@ -140,7 +144,7 @@ Public Class Form3
         x = 0
         pressing_time = 26
         bullet.Location = New Point(-1, -1)
-        face_direaction = player(round).Tag + 1
+
         Return Nothing
     End Function
 
@@ -212,7 +216,7 @@ Public Class Form3
     '射擊處理
     Private Sub Fire_timer_Tick(sender As Object, e As EventArgs) Handles fire_timer.Tick
         'If round Mod 2 Then
-        If face_direaction Then
+        If face_direaction(round) Then
             bullet.Location = New Point(player(round).Location.X + 33 + x, Route(x, pressing_time) - player(round).Height)
             x += 5
         Else
@@ -250,7 +254,7 @@ Public Class Form3
             move_direaction = False
             IsKeyPressing = True
             If movable Then
-                face_direaction = False
+                face_direaction(round) = False
                 If player(round).Tag = 1 Then
                     player(round).Image = My.Resources.藍_拿槍_翻轉
                 Else
@@ -264,7 +268,7 @@ Public Class Form3
             move_direaction = True
             IsKeyPressing = True
             If movable Then
-                face_direaction = True
+                face_direaction(round) = True
                 If player(round).Tag = 1 Then
                     player(round).Image = My.Resources.藍_拿槍
                 Else
