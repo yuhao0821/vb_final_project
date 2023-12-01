@@ -244,7 +244,7 @@ Public Class Form3
     End Sub
 
     Private Sub Counting_Timer_Tick(sender As Object, e As EventArgs) Handles Counting_Timer.Tick
-        If pressing_time > 0 Then
+        If pressing_time > 0 And movable Then
             pressing_time -= 1
         End If
         Label1.Text = pressing_time
