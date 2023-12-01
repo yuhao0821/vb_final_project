@@ -138,6 +138,7 @@ Public Class Form3
             If player_health(i) <= zero Then
                 player(i).Visible = False
                 player_name(i).Visible = False
+                player_health_graph(i).Visible = False
             End If
         Next
 
