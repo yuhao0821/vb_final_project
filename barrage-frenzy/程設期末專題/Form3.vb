@@ -27,8 +27,8 @@ Public Class Form3
 
 
     Dim IsKeyPressing As Boolean = False
-
     Dim move_direaction As Boolean
+    Dim airplane As Boolean
     Dim movable As Boolean
 
     Dim ground As New PictureBox
@@ -125,6 +125,7 @@ Public Class Form3
         count = 0
         check_count = 0
         fire_timer.Enabled = False
+        airplane = False
         IsKeyPressing = False
         movable = True
         real_round += 1
@@ -183,27 +184,37 @@ Public Class Form3
                 minY2 = PictureBox_temp.Location.Y
 
                 If maxX1 > minX2 And maxX2 > minX1 And maxY1 > minY2 And maxY2 > minY1 And player(round).Tag <> player(i).Tag And player_health(i) > 0 Then
-                    If player_health(i) > 0 Then
+                    If airplane Then
+                        player(round).Location = New Point(bullet.Location.X, player(i).Location.Y)
+                        player_name(round).Location = New Point(player(round).Location.X, player(round).Location.Y - 30)
+                        player_health_graph(round).Location = New Point(player(round).Location.X, player(round).Location.Y - 15)
+                    ElseIf player_health(i) > 0 Then
                         player_health(i) -= 25
-                        player_health_graph(i).Text = player_health(i).ToString + " / 100"
+                            player_health_graph(i).Text = player_health(i).ToString + " / 100"
+                        End If
+
+                        fire_timer.Enabled = False
+                        GameBody()
+                        check_count += 1
+                        count += 1
                     End If
 
-                    fire_timer.Enabled = False
-                    GameBody()
-                    check_count += 1
-                    count += 1
-                End If
-
-                PictureBox_temp = ground
+                    PictureBox_temp = ground
                 maxX2 = PictureBox_temp.Location.X + PictureBox_temp.Width
                 minX2 = PictureBox_temp.Location.X
                 maxY2 = PictureBox_temp.Location.Y + PictureBox_temp.Height + 8
                 minY2 = PictureBox_temp.Location.Y
                 If maxX1 > minX2 And maxX2 > minX1 And maxY1 > minY2 And maxY2 > minY1 Then
+                    If airplane Then
+                        player(round).Location = New Point(bullet.Location.X, ground.Location.Y - 50)
+                        player_name(round).Location = New Point(player(round).Location.X, player(round).Location.Y - 30)
+                        player_health_graph(round).Location = New Point(player(round).Location.X, player(round).Location.Y - 15)
+                    End If
                     fire_timer.Enabled = False
                     GameBody()
-                    check_count += 1
-                    count += 1
+                        check_count += 1
+                        count += 1
+
                 End If
             End If
         Next i
@@ -308,6 +319,11 @@ Public Class Form3
             movable = False
         End If
 
+    End Sub
+    Private Sub airplane_Button_Click(sender As Object, e As EventArgs) Handles airplane_Button.Click
+        If movable Then
+            airplane = True
+        End If
     End Sub
 
 

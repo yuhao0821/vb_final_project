@@ -31,6 +31,7 @@ Partial Class Form3
         Me.check_timer = New System.Windows.Forms.Timer(Me.components)
         Me.bullet = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.airplane_Button = New System.Windows.Forms.Label()
         CType(Me.bullet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -67,6 +68,15 @@ Partial Class Form3
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Label1"
         '
+        'airplane_Button
+        '
+        Me.airplane_Button.AutoSize = True
+        Me.airplane_Button.Location = New System.Drawing.Point(336, 108)
+        Me.airplane_Button.Name = "airplane_Button"
+        Me.airplane_Button.Size = New System.Drawing.Size(41, 12)
+        Me.airplane_Button.TabIndex = 4
+        Me.airplane_Button.Text = "紙飛機"
+        '
         'Form3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -74,6 +84,7 @@ Partial Class Form3
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = Global.程設期末專題.My.Resources.Resources.背景
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.airplane_Button)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.bullet)
         Me.Name = "Form3"
@@ -92,4 +103,5 @@ Partial Class Form3
     Friend WithEvents check_timer As Timer
     Friend WithEvents bullet As PictureBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents airplane_Button As Label
 End Class
