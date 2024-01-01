@@ -17,3 +17,7 @@
 
 2023/12/05
 	Paper_airplane done 育豪
+
+2024/1/1
+	jump done
+	scenes half done 育豪
