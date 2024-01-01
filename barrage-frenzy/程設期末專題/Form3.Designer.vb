@@ -32,6 +32,7 @@ Partial Class Form3
         Me.bullet = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.airplane_Button = New System.Windows.Forms.Label()
+        Me.jump_Timer = New System.Windows.Forms.Timer(Me.components)
         CType(Me.bullet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -104,4 +105,5 @@ Partial Class Form3
     Friend WithEvents bullet As PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents airplane_Button As Label
+    Friend WithEvents jump_Timer As Timer
 End Class

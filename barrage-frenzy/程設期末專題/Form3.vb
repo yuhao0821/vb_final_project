@@ -12,6 +12,8 @@ Public Class Form3
     Public player_health_graph() As Label
     Public player_health() As Integer
     Dim face_direaction() As Boolean
+    Dim scenes() As PictureBox
+    Dim scene_num As Integer = 4
 
     Public player_num As Integer
     Dim zero As Integer = 0
@@ -22,7 +24,10 @@ Public Class Form3
     Dim round As Integer
     Dim pressing_time As Integer
     Dim temp As Integer
+    Dim jump_counter As Integer = 0
+    Dim jumping_player As Integer
     Dim x As Integer
+
 
 
 
@@ -30,6 +35,8 @@ Public Class Form3
     Dim move_direaction As Boolean
     Dim airplane As Boolean
     Dim movable As Boolean
+    Dim jumping As Boolean
+
 
     Dim ground As New PictureBox
     Dim PictureBox_temp As PictureBox
@@ -85,6 +92,7 @@ Public Class Form3
 
         Next i
 
+        Scenes_create()
         Me.Controls.Add(ground)
         ground.Image = My.Resources.土地
         ground.SizeMode = PictureBoxSizeMode.StretchImage
@@ -95,11 +103,21 @@ Public Class Form3
         Initialization()
 
     End Sub
+    Sub Scenes_create()
+        ReDim scenes(scene_num)
+        While temp < 3  '第一個空島
+            scenes(temp) = New PictureBox
+            scenes(temp).Location = New Point(50 * (temp + 1), 50)
+            scenes(temp).BackColor = System.Drawing.Color.FromArgb(30, 155, 0, 144)
+            Me.Controls.Add(scenes(temp))
+            temp += 1
+        End While
 
+    End Sub
     Function GameBody()
         If count = 0 Then
             Initialization()
-            If winning_check() Then
+            If Winning_check() Then
                 If MsgBox("是否再來一局?", 4, "遊戲結束") = 6 Then
                     Form2.Show()
                     Me.Close()
@@ -125,6 +143,7 @@ Public Class Form3
         count = 0
         check_count = 0
         fire_timer.Enabled = False
+        jumping = False
         airplane = False
         IsKeyPressing = False
         movable = True
@@ -190,16 +209,16 @@ Public Class Form3
                         player_health_graph(round).Location = New Point(player(round).Location.X, player(round).Location.Y - 15)
                     ElseIf player_health(i) > 0 Then
                         player_health(i) -= 25
-                            player_health_graph(i).Text = player_health(i).ToString + " / 100"
-                        End If
-
-                        fire_timer.Enabled = False
-                        GameBody()
-                        check_count += 1
-                        count += 1
+                        player_health_graph(i).Text = player_health(i).ToString + " / 100"
                     End If
 
-                    PictureBox_temp = ground
+                    fire_timer.Enabled = False
+                    GameBody()
+                    check_count += 1
+                    count += 1
+                End If
+
+                PictureBox_temp = ground
                 maxX2 = PictureBox_temp.Location.X + PictureBox_temp.Width
                 minX2 = PictureBox_temp.Location.X
                 maxY2 = PictureBox_temp.Location.Y + PictureBox_temp.Height + 8
@@ -212,8 +231,8 @@ Public Class Form3
                     End If
                     fire_timer.Enabled = False
                     GameBody()
-                        check_count += 1
-                        count += 1
+                    check_count += 1
+                    count += 1
 
                 End If
             End If
@@ -244,13 +263,13 @@ Public Class Form3
 
     Private Sub Move_timer_Tick(sender As Object, e As EventArgs) Handles move_timer.Tick
         If move_direaction Then
-            player(round).Location = New Point(player(round).Location.X + 3, player(round).Location.Y)
-            player_name(round).Location = New Point(player_name(round).Location.X + 3, player_name(round).Location.Y)
-            player_health_graph(round).Location = New Point(player_health_graph(round).Location.X + 3, player_health_graph(round).Location.Y)
+            player(round).Location = New Point(player(round).Location.X + 8, player(round).Location.Y)
+            player_name(round).Location = New Point(player_name(round).Location.X + 8, player_name(round).Location.Y)
+            player_health_graph(round).Location = New Point(player_health_graph(round).Location.X + 8, player_health_graph(round).Location.Y)
         Else
-            player(round).Location = New Point(player(round).Location.X - 3, player(round).Location.Y)
-            player_name(round).Location = New Point(player_name(round).Location.X - 3, player_name(round).Location.Y)
-            player_health_graph(round).Location = New Point(player_health_graph(round).Location.X - 3, player_health_graph(round).Location.Y)
+            player(round).Location = New Point(player(round).Location.X - 8, player(round).Location.Y)
+            player_name(round).Location = New Point(player_name(round).Location.X - 8, player_name(round).Location.Y)
+            player_health_graph(round).Location = New Point(player_health_graph(round).Location.X - 8, player_health_graph(round).Location.Y)
         End If
     End Sub
 
@@ -290,9 +309,21 @@ Public Class Form3
             End If
         End If
 
+        If e.KeyCode = 38 And jumping = False Then '上 跳
+            If movable And jumping = False Then
+                jumping_player = round
+                jump_counter = 0
+                jump_Timer.Start()
+                jumping = True
+            End If
+        End If
+
         If e.KeyCode = 32 Then '空白鍵
             Counting_Timer.Start()
             IsKeyPressing = True
+        End If
+        If e.KeyCode = 65 Then 'a 紙飛機
+            airplane_Button_Click(airplane_Button, New EventArgs)
         End If
 
     End Sub
@@ -324,6 +355,24 @@ Public Class Form3
         If movable Then
             airplane = True
         End If
+    End Sub
+
+    Private Sub jump_timer_Tick(sender As Object, e As EventArgs) Handles jump_timer.Tick
+
+        If jump_counter < 8 Then
+            player(jumping_player).Location = New Point(player(jumping_player).Location.X, player(jumping_player).Location.Y - 8)
+            player_name(jumping_player).Location = New Point(player_name(jumping_player).Location.X, player_name(jumping_player).Location.Y - 8)
+            player_health_graph(jumping_player).Location = New Point(player_health_graph(jumping_player).Location.X, player_health_graph(jumping_player).Location.Y - 8)
+        ElseIf jump_counter < 16 Then
+            player(jumping_player).Location = New Point(player(jumping_player).Location.X, player(jumping_player).Location.Y + 8)
+            player_name(jumping_player).Location = New Point(player_name(jumping_player).Location.X, player_name(jumping_player).Location.Y + 8)
+            player_health_graph(jumping_player).Location = New Point(player_health_graph(jumping_player).Location.X, player_health_graph(jumping_player).Location.Y + 8)
+        Else
+            jump_counter = 0
+            jump_timer.Stop()
+            jumping = False
+        End If
+        jump_counter += 1
     End Sub
 
 
