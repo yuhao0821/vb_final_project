@@ -33,7 +33,10 @@ Partial Class Form3
         Me.Label1 = New System.Windows.Forms.Label()
         Me.airplane_Button = New System.Windows.Forms.Label()
         Me.jump_Timer = New System.Windows.Forms.Timer(Me.components)
+        Me.show_power = New System.Windows.Forms.PictureBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         CType(Me.bullet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.show_power, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'fire_timer
@@ -63,9 +66,11 @@ Partial Class Form3
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(393, 159)
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("微軟正黑體", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.Label1.Location = New System.Drawing.Point(45, 15)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(37, 12)
+        Me.Label1.Size = New System.Drawing.Size(45, 16)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Label1"
         '
@@ -78,6 +83,27 @@ Partial Class Form3
         Me.airplane_Button.TabIndex = 4
         Me.airplane_Button.Text = "紙飛機"
         '
+        'show_power
+        '
+        Me.show_power.BackColor = System.Drawing.Color.Transparent
+        Me.show_power.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.show_power.Location = New System.Drawing.Point(130, 400)
+        Me.show_power.Name = "show_power"
+        Me.show_power.Size = New System.Drawing.Size(0, 20)
+        Me.show_power.TabIndex = 5
+        Me.show_power.TabStop = False
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("微軟正黑體", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.Label2.Location = New System.Drawing.Point(45, -1)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(45, 16)
+        Me.Label2.TabIndex = 6
+        Me.Label2.Text = "power"
+        '
         'Form3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -85,12 +111,15 @@ Partial Class Form3
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = Global.程設期末專題.My.Resources.Resources.背景
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.show_power)
         Me.Controls.Add(Me.airplane_Button)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.bullet)
         Me.Name = "Form3"
         Me.Text = "Form3"
         CType(Me.bullet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.show_power, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -106,4 +135,6 @@ Partial Class Form3
     Friend WithEvents Label1 As Label
     Friend WithEvents airplane_Button As Label
     Friend WithEvents jump_Timer As Timer
+    Friend WithEvents show_power As PictureBox
+    Friend WithEvents Label2 As Label
 End Class

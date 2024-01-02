@@ -21,3 +21,6 @@
 2024/1/1
 	jump done
 	scenes half done 育豪
+
+2024/1/2
+	scenes done 育豪

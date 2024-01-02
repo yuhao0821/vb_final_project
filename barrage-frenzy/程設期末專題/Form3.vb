@@ -13,7 +13,7 @@ Public Class Form3
     Public player_health() As Integer
     Dim face_direaction() As Boolean
     Dim scenes() As PictureBox
-    Dim scene_num As Integer = 4
+    Dim scene_num As Integer = 28
 
     Public player_num As Integer
     Dim zero As Integer = 0
@@ -23,9 +23,11 @@ Public Class Form3
     Dim real_round As Integer = -1
     Dim round As Integer
     Dim pressing_time As Integer
+    Dim pressing_counter As Integer
     Dim temp As Integer
     Dim jump_counter As Integer = 0
     Dim jumping_player As Integer
+    Dim y As Integer
     Dim x As Integer
 
 
@@ -77,6 +79,7 @@ Public Class Form3
             End If
             player(i).Width = 50
             player(i).Height = 50
+            player(i).BackColor = Color.Transparent
             player(i).SizeMode = PictureBoxSizeMode.StretchImage
 
             player_name(i).AutoSize = True
@@ -105,10 +108,36 @@ Public Class Form3
     End Sub
     Sub Scenes_create()
         ReDim scenes(scene_num)
-        While temp < 3  '第一個空島
+        While temp < scene_num
             scenes(temp) = New PictureBox
-            scenes(temp).Location = New Point(50 * (temp + 1), 50)
-            scenes(temp).BackColor = System.Drawing.Color.FromArgb(30, 155, 0, 144)
+            If temp < 4 Then '第一層空島
+                scenes(temp).Location = New Point(35 * (temp Mod 4) + 30, 60)
+            ElseIf temp < 8 Then
+                scenes(temp).Location = New Point(35 * (temp Mod 4) + 230, 60)
+            ElseIf temp < 12 Then
+                scenes(temp).Location = New Point(35 * (temp Mod 4) + 430, 60)
+            ElseIf temp < 16 Then
+                scenes(temp).Location = New Point(35 * (temp Mod 4) + 630, 60)
+            ElseIf temp < 20 Then '第二層空島
+                scenes(temp).Location = New Point(35 * (temp Mod 4) + 30, 200)
+            ElseIf temp < 24 Then
+                scenes(temp).Location = New Point(35 * (temp Mod 4) + 330, 200)
+            ElseIf temp < 28 Then
+                scenes(temp).Location = New Point(35 * (temp Mod 4) + 630, 200)
+            End If
+            scenes(temp).Size = New Size(35, 60)
+            scenes(temp).SizeMode = PictureBoxSizeMode.StretchImage
+            Select Case temp Mod 4
+                Case 0
+                    scenes(temp).Image = My.Resources.空島1
+                Case 1
+                    scenes(temp).Image = My.Resources.空島2
+                Case 2
+                    scenes(temp).Image = My.Resources.空島3
+                Case 3
+                    scenes(temp).Image = My.Resources.空島4
+            End Select
+            scenes(temp).BackColor = Color.Transparent
             Me.Controls.Add(scenes(temp))
             temp += 1
         End While
@@ -142,7 +171,11 @@ Public Class Form3
     Function Initialization()
         count = 0
         check_count = 0
+        pressing_counter = 0
         fire_timer.Enabled = False
+        show_power.Size = New Size(0, 10)
+        show_power.BackColor = Color.Transparent
+        show_power.Location = New Point(85.2)
         jumping = False
         airplane = False
         IsKeyPressing = False
@@ -189,6 +222,7 @@ Public Class Form3
         Return False
     End Function
     Function Bullet_check()
+        'MsgBox(bullet.Location.X.ToString + " , " + bullet.Location.Y.ToString)
         maxX1 = bullet.Location.X + bullet.Width
         minX1 = bullet.Location.X
         maxY1 = bullet.Location.Y + bullet.Height
@@ -225,7 +259,7 @@ Public Class Form3
                 minY2 = PictureBox_temp.Location.Y
                 If maxX1 > minX2 And maxX2 > minX1 And maxY1 > minY2 And maxY2 > minY1 Then
                     If airplane Then
-                        player(round).Location = New Point(bullet.Location.X, ground.Location.Y - 50)
+                        player(round).Location = New Point(bullet.Location.X, PictureBox_temp.Location.Y - 50)
                         player_name(round).Location = New Point(player(round).Location.X, player(round).Location.Y - 30)
                         player_health_graph(round).Location = New Point(player(round).Location.X, player(round).Location.Y - 15)
                     End If
@@ -235,9 +269,29 @@ Public Class Form3
                     count += 1
 
                 End If
+                For j As Integer = 0 To scene_num - 1
+                    PictureBox_temp = scenes(j)
+                    maxX2 = PictureBox_temp.Location.X + PictureBox_temp.Width
+                    minX2 = PictureBox_temp.Location.X
+                    'maxY2 = PictureBox_temp.Location.Y + PictureBox_temp.Height + 8
+                    maxY2 = PictureBox_temp.Location.Y + 15
+                    minY2 = PictureBox_temp.Location.Y
+                    If maxX1 > minX2 And maxX2 > minX1 And maxY1 > minY2 And maxY2 > minY1 And y < bullet.Location.Y Then
+                        If airplane Then
+                            player(round).Location = New Point(bullet.Location.X, PictureBox_temp.Location.Y - 45)
+                            player_name(round).Location = New Point(player(round).Location.X, player(round).Location.Y - 30)
+                            player_health_graph(round).Location = New Point(player(round).Location.X, player(round).Location.Y - 15)
+                        End If
+                        fire_timer.Enabled = False
+                        GameBody()
+                        check_count += 1
+                        count += 1
+
+                    End If
+                Next j
             End If
         Next i
-        If bullet.Location.X > 800 OrElse bullet.Location.X < 0 OrElse bullet.Location.Y > 400 OrElse bullet.Location.Y < 0 Then
+        If bullet.Location.X > 800 OrElse bullet.Location.X < 0 OrElse bullet.Location.Y > 400 OrElse bullet.Location.Y < -150 Then
             fire_timer.Enabled = False
             GameBody()
             count += 1
@@ -247,17 +301,19 @@ Public Class Form3
     '射擊處理
     Private Sub Fire_timer_Tick(sender As Object, e As EventArgs) Handles fire_timer.Tick
         'If round Mod 2 Then
+
         If face_direaction(round) Then
-            bullet.Location = New Point(player(round).Location.X + 33 + x, Route(x, pressing_time) - player(round).Height)
+            bullet.Location = New Point(player(round).Location.X + 25 + x, Route(x, pressing_time) - player(round).Height - (320 - player(round).Location.Y))
             x += 5
         Else
-            bullet.Location = New Point(player(round).Location.X - 33 - x, Route(x, pressing_time) - player(round).Height)
+            bullet.Location = New Point(player(round).Location.X + 25 - x, Route(x, pressing_time) - player(round).Height - (320 - player(round).Location.Y))
             x += 5
         End If
         If check_count Mod 5 = 0 Then
             Bullet_check()
         End If
         check_count += 1
+        y = bullet.Location.Y
     End Sub
 
 
@@ -275,8 +331,22 @@ Public Class Form3
 
     Private Sub Counting_Timer_Tick(sender As Object, e As EventArgs) Handles Counting_Timer.Tick
         If pressing_time > 0 And movable Then
-            pressing_time -= 1
+            If pressing_time >= 20 Then
+                If pressing_counter Mod 3 = 0 Then
+                    pressing_time -= 1
+                End If
+            ElseIf pressing_time >= 15 Then
+                If pressing_counter Mod 2 = 0 Then
+                    pressing_time -= 1
+                End If
+            Else
+                pressing_time -= 1
+            End If
         End If
+            If pressing_counter < 100 Then
+            pressing_counter += 1
+        End If
+        show_power.Size = New Size((26 - pressing_time) * 25, 10)
         Label1.Text = pressing_time
     End Sub
 
@@ -320,6 +390,7 @@ Public Class Form3
 
         If e.KeyCode = 32 Then '空白鍵
             Counting_Timer.Start()
+            show_power.BackColor = Color.OrangeRed
             IsKeyPressing = True
         End If
         If e.KeyCode = 65 Then 'a 紙飛機
@@ -375,5 +446,8 @@ Public Class Form3
         jump_counter += 1
     End Sub
 
+    Public Sub Form3_close(sender As Object, e As EventArgs) Handles MyBase.Closed
+        Form1.Close()
 
+    End Sub
 End Class
