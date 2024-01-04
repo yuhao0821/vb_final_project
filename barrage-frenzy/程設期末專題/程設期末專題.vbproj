@@ -224,5 +224,17 @@
   <ItemGroup>
     <None Include="Resources\1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\背景-選擇地圖.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\questionmark.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\select map.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\地圖1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

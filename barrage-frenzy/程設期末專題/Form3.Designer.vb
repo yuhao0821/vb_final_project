@@ -58,8 +58,9 @@ Partial Class Form3
         '
         Me.bullet.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.bullet.Location = New System.Drawing.Point(-1, -1)
+        Me.bullet.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.bullet.Name = "bullet"
-        Me.bullet.Size = New System.Drawing.Size(8, 8)
+        Me.bullet.Size = New System.Drawing.Size(11, 10)
         Me.bullet.TabIndex = 1
         Me.bullet.TabStop = False
         '
@@ -68,28 +69,33 @@ Partial Class Form3
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("微軟正黑體", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label1.Location = New System.Drawing.Point(45, 15)
+        Me.Label1.Location = New System.Drawing.Point(60, 19)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(45, 16)
+        Me.Label1.Size = New System.Drawing.Size(57, 19)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Label1"
+        Me.Label1.Visible = False
         '
         'airplane_Button
         '
         Me.airplane_Button.AutoSize = True
-        Me.airplane_Button.Location = New System.Drawing.Point(336, 108)
+        Me.airplane_Button.Location = New System.Drawing.Point(448, 135)
+        Me.airplane_Button.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.airplane_Button.Name = "airplane_Button"
-        Me.airplane_Button.Size = New System.Drawing.Size(41, 12)
+        Me.airplane_Button.Size = New System.Drawing.Size(52, 15)
         Me.airplane_Button.TabIndex = 4
         Me.airplane_Button.Text = "紙飛機"
+        Me.airplane_Button.Visible = False
         '
         'show_power
         '
         Me.show_power.BackColor = System.Drawing.Color.Transparent
         Me.show_power.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.show_power.Location = New System.Drawing.Point(130, 400)
+        Me.show_power.Location = New System.Drawing.Point(173, 500)
+        Me.show_power.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.show_power.Name = "show_power"
-        Me.show_power.Size = New System.Drawing.Size(0, 20)
+        Me.show_power.Size = New System.Drawing.Size(0, 24)
         Me.show_power.TabIndex = 5
         Me.show_power.TabStop = False
         '
@@ -98,24 +104,27 @@ Partial Class Form3
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("微軟正黑體", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label2.Location = New System.Drawing.Point(45, -1)
+        Me.Label2.Location = New System.Drawing.Point(60, -1)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(45, 16)
+        Me.Label2.Size = New System.Drawing.Size(56, 19)
         Me.Label2.TabIndex = 6
         Me.Label2.Text = "power"
+        Me.Label2.Visible = False
         '
         'Form3
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = Global.程設期末專題.My.Resources.Resources.背景
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(1067, 562)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.show_power)
         Me.Controls.Add(Me.airplane_Button)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.bullet)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "Form3"
         Me.Text = "Form3"
         CType(Me.bullet, System.ComponentModel.ISupportInitialize).EndInit()
