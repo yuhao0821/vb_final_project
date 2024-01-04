@@ -10,7 +10,7 @@
         Form3.player_name(2).Text = TextBox3.Text
         Form3.player_name(3).Text = TextBox4.Text
 
-        Form3.Show()
+        Form8.Show()
         Me.Close()
     End Sub
 End Class
