@@ -38,6 +38,7 @@ Partial Class Form3
         Me.Label2 = New System.Windows.Forms.Label()
         Me.now_player = New System.Windows.Forms.PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.bullet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.show_power, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.now_player, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -138,6 +139,15 @@ Partial Class Form3
         Me.Label3.TabIndex = 9
         Me.Label3.Text = "Label3"
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(520, 96)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 10
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Form3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 15.0!)
@@ -145,6 +155,7 @@ Partial Class Form3
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = Global.程設期末專題.My.Resources.Resources.背景
         Me.ClientSize = New System.Drawing.Size(1067, 562)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.now_player)
         Me.Controls.Add(Me.Label2)
@@ -177,4 +188,5 @@ Partial Class Form3
     Friend WithEvents Label2 As Label
     Friend WithEvents now_player As PictureBox
     Friend WithEvents Label3 As Label
+    Friend WithEvents Button1 As Button
 End Class
