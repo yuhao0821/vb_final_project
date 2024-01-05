@@ -22,7 +22,17 @@
   使用這個強類型資源類別的資源查閱。
 </summary>
 </member>
+<member name="P:程設期末專題.My.Resources.Resources.die">
+<summary>
+  查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
+</summary>
+</member>
 <member name="P:程設期末專題.My.Resources.Resources.GameMusic">
+<summary>
+  查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
+</summary>
+</member>
+<member name="P:程設期末專題.My.Resources.Resources.moving">
 <summary>
   查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
 </summary>
@@ -35,6 +45,11 @@
 <member name="P:程設期末專題.My.Resources.Resources.select_map">
 <summary>
   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+</summary>
+</member>
+<member name="P:程設期末專題.My.Resources.Resources.shooting">
+<summary>
+  查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
 </summary>
 </member>
 <member name="P:程設期末專題.My.Resources.Resources.土地">
@@ -95,6 +110,11 @@
 <member name="P:程設期末專題.My.Resources.Resources.紅_拿槍_翻轉">
 <summary>
   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+</summary>
+</member>
+<member name="P:程設期末專題.My.Resources.Resources.結算">
+<summary>
+  查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
 </summary>
 </member>
 <member name="P:程設期末專題.My.Resources.Resources.背景">

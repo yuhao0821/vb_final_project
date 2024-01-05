@@ -245,5 +245,17 @@
   <ItemGroup>
     <None Include="Resources\GameMusic.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shooting.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\die.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\結算.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moving.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

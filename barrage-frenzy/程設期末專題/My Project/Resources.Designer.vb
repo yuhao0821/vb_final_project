@@ -63,9 +63,27 @@ Namespace My.Resources
         '''<summary>
         '''  查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
         '''</summary>
+        Friend ReadOnly Property die() As System.IO.UnmanagedMemoryStream
+            Get
+                Return ResourceManager.GetStream("die", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
+        '''</summary>
         Friend ReadOnly Property GameMusic() As System.IO.UnmanagedMemoryStream
             Get
                 Return ResourceManager.GetStream("GameMusic", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
+        '''</summary>
+        Friend ReadOnly Property moving() As System.IO.UnmanagedMemoryStream
+            Get
+                Return ResourceManager.GetStream("moving", resourceCulture)
             End Get
         End Property
         
@@ -86,6 +104,15 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("select_map", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
+        '''</summary>
+        Friend ReadOnly Property shooting() As System.IO.UnmanagedMemoryStream
+            Get
+                Return ResourceManager.GetStream("shooting", resourceCulture)
             End Get
         End Property
         
@@ -206,6 +233,15 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("紅_拿槍_翻轉", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
+        '''</summary>
+        Friend ReadOnly Property 結算() As System.IO.UnmanagedMemoryStream
+            Get
+                Return ResourceManager.GetStream("結算", resourceCulture)
             End Get
         End Property
         

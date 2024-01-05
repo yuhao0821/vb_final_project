@@ -1,12 +1,4 @@
-﻿Imports System.Drawing.Drawing2D
-Imports System.Net.NetworkInformation
-Imports System.Net.Security
-Imports System.Reflection
-Imports System.Threading
-Imports System.Windows.Forms.VisualStyles
-Imports Microsoft
-
-Public Class Form3
+﻿Public Class Form3
 
     Public player() As PictureBox
     Public player_name() As Label
@@ -216,15 +208,18 @@ Public Class Form3
     Function Winning_check() As Boolean
         If player_num = 2 Then
             If player_health(0) = 0 Then
+                My.Computer.Audio.Play(My.Resources.die, AudioPlayMode.Background)
                 MsgBox("red win",, "Game")
                 Return True
             ElseIf player_health(1) = 0 Then
+                My.Computer.Audio.Play(My.Resources.die, AudioPlayMode.Background)
                 MsgBox("blue win",, "Game")
                 Return True
             End If
         ElseIf player_health(0) = 0 And player_health(2) = 0 Then
             MsgBox("red win",, "Game")
             Return True
+
         ElseIf player_health(1) = 0 And player_health(3) = 0 Then
             MsgBox("blue win",, "Game")
             Return True
@@ -365,6 +360,7 @@ Public Class Form3
             move_direaction = False
             IsKeyPressing = True
             If movable Then
+                My.Computer.Audio.Play(My.Resources.moving, AudioPlayMode.Background)
                 face_direaction(round) = False
                 If player(round).Tag = 1 Then
                     player(round).Image = My.Resources.藍_拿槍_翻轉
@@ -379,6 +375,7 @@ Public Class Form3
             move_direaction = True
             IsKeyPressing = True
             If movable Then
+                My.Computer.Audio.Play(My.Resources.moving, AudioPlayMode.Background)
                 face_direaction(round) = True
                 If player(round).Tag = 1 Then
                     player(round).Image = My.Resources.藍_拿槍
@@ -442,7 +439,7 @@ Public Class Form3
         End If
     End Sub
 
-    Private Sub jump_timer_Tick(sender As Object, e As EventArgs) Handles jump_timer.Tick
+    Private Sub jump_timer_Tick(sender As Object, e As EventArgs) Handles jump_Timer.Tick
 
         If jump_counter < 8 Then
             player(jumping_player).Location = New Point(player(jumping_player).Location.X, player(jumping_player).Location.Y - 8)
@@ -451,7 +448,7 @@ Public Class Form3
             now_player.Location = New Point(player(round).Location.X + 10, player(round).Location.Y - 60)
         Else
             jump_counter = 0
-            jump_timer.Stop()
+            jump_Timer.Stop()
             jumping = False
             Gravity_Timer.Enabled = True
         End If
