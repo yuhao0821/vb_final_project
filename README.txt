@@ -24,3 +24,7 @@
 
 2024/1/2
 	scenes done 育豪
+
+2024/1/5
+	gravity done 
+	debug 育豪
