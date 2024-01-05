@@ -460,7 +460,6 @@ Public Class Form3
 
     Public Sub Form3_close(sender As Object, e As EventArgs) Handles MyBase.Closed
         Form1.Close()
-
     End Sub
 
     Private Sub Gravity_Timer_Tick(sender As Object, e As EventArgs) Handles Gravity_Timer.Tick
