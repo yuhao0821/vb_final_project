@@ -16,7 +16,6 @@
     End Sub
 
     Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
-        PictureBox4.BackColor = Color.Transparent
         Dim randomNumber As Integer = rand.Next(1, 4) ' 生成 1 到 3 之間的隨機數
 
         ' 根據隨機數顯示對應的地圖Form

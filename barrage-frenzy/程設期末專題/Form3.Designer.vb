@@ -58,7 +58,7 @@ Partial Class Form3
         '
         Me.bullet.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.bullet.Location = New System.Drawing.Point(-1, -1)
-        Me.bullet.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.bullet.Margin = New System.Windows.Forms.Padding(4)
         Me.bullet.Name = "bullet"
         Me.bullet.Size = New System.Drawing.Size(11, 10)
         Me.bullet.TabIndex = 1
@@ -75,7 +75,6 @@ Partial Class Form3
         Me.Label1.Size = New System.Drawing.Size(57, 19)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Label1"
-        Me.Label1.Visible = False
         '
         'airplane_Button
         '
@@ -86,14 +85,13 @@ Partial Class Form3
         Me.airplane_Button.Size = New System.Drawing.Size(52, 15)
         Me.airplane_Button.TabIndex = 4
         Me.airplane_Button.Text = "紙飛機"
-        Me.airplane_Button.Visible = False
         '
         'show_power
         '
         Me.show_power.BackColor = System.Drawing.Color.Transparent
         Me.show_power.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.show_power.Location = New System.Drawing.Point(173, 500)
-        Me.show_power.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.show_power.Margin = New System.Windows.Forms.Padding(4)
         Me.show_power.Name = "show_power"
         Me.show_power.Size = New System.Drawing.Size(0, 24)
         Me.show_power.TabIndex = 5
@@ -110,7 +108,6 @@ Partial Class Form3
         Me.Label2.Size = New System.Drawing.Size(56, 19)
         Me.Label2.TabIndex = 6
         Me.Label2.Text = "power"
-        Me.Label2.Visible = False
         '
         'Form3
         '
@@ -124,7 +121,7 @@ Partial Class Form3
         Me.Controls.Add(Me.airplane_Button)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.bullet)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Form3"
         Me.Text = "Form3"
         CType(Me.bullet, System.ComponentModel.ISupportInitialize).EndInit()

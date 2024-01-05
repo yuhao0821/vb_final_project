@@ -206,17 +206,17 @@ Public Class Form3
     Function Winning_check() As Boolean
         If player_num = 2 Then
             If player_health(0) = 0 Then
-                MsgBox("red win")
+                MsgBox("red win",, "Game")
                 Return True
             ElseIf player_health(1) = 0 Then
-                MsgBox("blue win")
+                MsgBox("blue win",, "Game")
                 Return True
             End If
         ElseIf player_health(0) = 0 And player_health(2) = 0 Then
-            MsgBox("red win")
+            MsgBox("red win",, "Game")
             Return True
         ElseIf player_health(1) = 0 And player_health(3) = 0 Then
-            MsgBox("blue win")
+            MsgBox("blue win",, "Game")
             Return True
         End If
         Return False
