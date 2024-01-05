@@ -1,7 +1,9 @@
 ﻿Public Class Form2
     '單機表單
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Dim soundFilePath As String = "D:\music\遊戲音樂.wav"
+        ' 播放音效
+        My.Computer.Audio.Play(soundFilePath, AudioPlayMode.BackgroundLoop)
     End Sub
 
 
@@ -30,4 +32,16 @@
         Me.Close()
     End Sub
 
+    Private isMuted As Boolean = False
+    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
+        isMuted = Not isMuted
+
+        If isMuted Then
+            My.Computer.Audio.Stop()
+        Else
+            Dim soundFilePath As String = "D:\music\遊戲音樂.wav"
+            ' 循环播放音效
+            My.Computer.Audio.Play(soundFilePath, AudioPlayMode.BackgroundLoop)
+        End If
+    End Sub
 End Class

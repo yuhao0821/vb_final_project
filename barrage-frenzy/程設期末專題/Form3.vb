@@ -2,6 +2,7 @@
 Imports System.Net.NetworkInformation
 Imports System.Net.Security
 Imports System.Reflection
+Imports System.Threading
 Imports System.Windows.Forms.VisualStyles
 Imports Microsoft
 
@@ -352,7 +353,7 @@ Public Class Form3
                 pressing_time -= 1
             End If
         End If
-            If pressing_counter < 100 Then
+        If pressing_counter < 100 Then
             pressing_counter += 1
         End If
         show_power.Size = New Size((26 - pressing_time) * 25, 10)
@@ -489,4 +490,17 @@ Public Class Form3
         Label3.Text = standing
         Return standing
     End Function
+
+    Private isMuted As Boolean = False
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        isMuted = Not isMuted
+
+        If isMuted Then
+            My.Computer.Audio.Stop()
+        Else
+            Dim soundFilePath As String = "D:\music\遊戲音樂.wav"
+            ' 循环播放音效
+            My.Computer.Audio.Play(soundFilePath, AudioPlayMode.BackgroundLoop)
+        End If
+    End Sub
 End Class

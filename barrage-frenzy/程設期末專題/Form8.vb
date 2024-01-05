@@ -32,4 +32,16 @@
         End Select
     End Sub
 
+    Private isMuted As Boolean = False
+    Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
+        isMuted = Not isMuted
+
+        If isMuted Then
+            My.Computer.Audio.Stop()
+        Else
+            Dim soundFilePath As String = "D:\music\遊戲音樂.wav"
+            ' 循环播放音效
+            My.Computer.Audio.Play(soundFilePath, AudioPlayMode.BackgroundLoop)
+        End If
+    End Sub
 End Class
