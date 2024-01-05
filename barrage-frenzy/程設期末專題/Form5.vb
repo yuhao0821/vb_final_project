@@ -1,8 +1,6 @@
 ﻿Public Class Form5
     Private Sub Form5_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim soundFilePath As String = "D:\music\遊戲音樂.wav"
-        ' 播放音效
-        My.Computer.Audio.Play(soundFilePath, AudioPlayMode.BackgroundLoop)
+        My.Computer.Audio.Play(My.Resources.GameMusic, AudioPlayMode.BackgroundLoop)
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -23,9 +21,7 @@
         If isMuted Then
             My.Computer.Audio.Stop()
         Else
-            Dim soundFilePath As String = "D:\music\遊戲音樂.wav"
-            ' 循环播放音效
-            My.Computer.Audio.Play(soundFilePath, AudioPlayMode.BackgroundLoop)
+            My.Computer.Audio.Play(My.Resources.GameMusic, AudioPlayMode.BackgroundLoop)
         End If
     End Sub
 End Class

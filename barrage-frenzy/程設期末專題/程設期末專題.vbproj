@@ -239,5 +239,11 @@
   <ItemGroup>
     <None Include="Resources\玩家提示.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\遊戲音樂.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GameMusic.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

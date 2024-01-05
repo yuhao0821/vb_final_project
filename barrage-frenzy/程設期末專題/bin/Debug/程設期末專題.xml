@@ -22,6 +22,11 @@
   使用這個強類型資源類別的資源查閱。
 </summary>
 </member>
+<member name="P:程設期末專題.My.Resources.Resources.GameMusic">
+<summary>
+  查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
+</summary>
+</member>
 <member name="P:程設期末專題.My.Resources.Resources.questionmark">
 <summary>
   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
