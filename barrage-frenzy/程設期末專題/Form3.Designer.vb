@@ -23,8 +23,9 @@ Partial Class Form3
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form3))
         Me.fire_timer = New System.Windows.Forms.Timer(Me.components)
-        Me.aim_Timer = New System.Windows.Forms.Timer(Me.components)
+        Me.Gravity_Timer = New System.Windows.Forms.Timer(Me.components)
         Me.global_timer = New System.Windows.Forms.Timer(Me.components)
         Me.move_timer = New System.Windows.Forms.Timer(Me.components)
         Me.Counting_Timer = New System.Windows.Forms.Timer(Me.components)
@@ -35,13 +36,20 @@ Partial Class Form3
         Me.jump_Timer = New System.Windows.Forms.Timer(Me.components)
         Me.show_power = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.now_player = New System.Windows.Forms.PictureBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         CType(Me.bullet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.show_power, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.now_player, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'fire_timer
         '
         Me.fire_timer.Interval = 30
+        '
+        'Gravity_Timer
+        '
+        Me.Gravity_Timer.Enabled = True
         '
         'move_timer
         '
@@ -109,6 +117,27 @@ Partial Class Form3
         Me.Label2.TabIndex = 6
         Me.Label2.Text = "power"
         '
+        'now_player
+        '
+        Me.now_player.BackColor = System.Drawing.Color.Transparent
+        Me.now_player.Enabled = False
+        Me.now_player.Image = CType(resources.GetObject("now_player.Image"), System.Drawing.Image)
+        Me.now_player.Location = New System.Drawing.Point(321, 162)
+        Me.now_player.Name = "now_player"
+        Me.now_player.Size = New System.Drawing.Size(30, 30)
+        Me.now_player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.now_player.TabIndex = 7
+        Me.now_player.TabStop = False
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(127, 100)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(46, 15)
+        Me.Label3.TabIndex = 9
+        Me.Label3.Text = "Label3"
+        '
         'Form3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 15.0!)
@@ -116,6 +145,8 @@ Partial Class Form3
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = Global.程設期末專題.My.Resources.Resources.背景
         Me.ClientSize = New System.Drawing.Size(1067, 562)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.now_player)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.show_power)
         Me.Controls.Add(Me.airplane_Button)
@@ -126,13 +157,14 @@ Partial Class Form3
         Me.Text = "Form3"
         CType(Me.bullet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.show_power, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.now_player, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents fire_timer As Timer
-    Friend WithEvents aim_Timer As Timer
+    Friend WithEvents Gravity_Timer As Timer
     Friend WithEvents global_timer As Timer
     Friend WithEvents move_timer As Timer
     Friend WithEvents Counting_Timer As Timer
@@ -143,4 +175,6 @@ Partial Class Form3
     Friend WithEvents jump_Timer As Timer
     Friend WithEvents show_power As PictureBox
     Friend WithEvents Label2 As Label
+    Friend WithEvents now_player As PictureBox
+    Friend WithEvents Label3 As Label
 End Class
