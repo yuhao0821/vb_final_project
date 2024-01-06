@@ -164,7 +164,7 @@
       <DependentUpon>Form8.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
-      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <Generator>PublicVbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
@@ -255,10 +255,25 @@
     <None Include="Resources\結算.wav" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\jump.wav" />
+    <None Include="Resources\moving.wav" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\moving.wav" />
+    <None Include="Resources\紅1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\紅1bang.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\紅1dead.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\紅2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\紅2bang.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\紅2dead.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\藍1.jpg" />
@@ -279,28 +294,229 @@
     <None Include="Resources\藍2dead.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\紅1.jpg" />
+    <None Include="Resources\S__3481628_0.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\紅1bang.jpg" />
+    <None Include="Resources\紅11.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\紅1dead.jpg" />
+    <None Include="Resources\紅1bang1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\紅2bang.jpg" />
+    <None Include="Resources\紅1dead1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\紅2dead.jpg" />
+    <None Include="Resources\紅21.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\紅2.jpg" />
+    <None Include="Resources\紅2bang1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\灰機.jpg" />
+    <None Include="Resources\藍11.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\墓碑.jpg" />
+    <None Include="Resources\藍1bang1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍1dead1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍21.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍2bang1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍2dead1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\紅22.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\紅2bang2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\紅2dead1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍2bang2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍2dead2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\紅111.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\紅1bang11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\紅1dead11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\紅211.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\紅2bang11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍111.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍1bang11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍1dead11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍211.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍2bang11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍2dead11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\紅12.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\紅1bang2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\紅1dead2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍12.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍1bang2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍1dead2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍22.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍2bang3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍2dead3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\紅112.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\紅1dead12.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\紅212.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\紅2bang12.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍112.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍1bang12.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍1dead12.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍212.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍2dead12.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\紅1111.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\紅1bang111.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\紅1dead111.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\紅2111.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\紅221.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\紅2bang111.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\紅2bang21.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\紅2dead11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍1111.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍1bang111.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍1dead111.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍2111.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍2bang111.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍2bang21.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍2dead111.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍2dead21.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\紅1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\紅1bang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\紅1dead.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\紅2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\紅2bang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\紅2dead.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍1bang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍1dead.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍2bang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍2dead.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bullet hit.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

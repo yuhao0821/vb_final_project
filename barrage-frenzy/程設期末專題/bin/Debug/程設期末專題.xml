@@ -22,17 +22,17 @@
   使用這個強類型資源類別的資源查閱。
 </summary>
 </member>
+<member name="P:程設期末專題.My.Resources.Resources.Bullet_hit">
+<summary>
+  查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
+</summary>
+</member>
 <member name="P:程設期末專題.My.Resources.Resources.die">
 <summary>
   查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
 </summary>
 </member>
 <member name="P:程設期末專題.My.Resources.Resources.GameMusic">
-<summary>
-  查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
-</summary>
-</member>
-<member name="P:程設期末專題.My.Resources.Resources.jump">
 <summary>
   查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
 </summary>
@@ -117,6 +117,36 @@
   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
 </summary>
 </member>
+<member name="P:程設期末專題.My.Resources.Resources.紅1">
+<summary>
+  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+</summary>
+</member>
+<member name="P:程設期末專題.My.Resources.Resources.紅1bang">
+<summary>
+  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+</summary>
+</member>
+<member name="P:程設期末專題.My.Resources.Resources.紅1dead">
+<summary>
+  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+</summary>
+</member>
+<member name="P:程設期末專題.My.Resources.Resources.紅2">
+<summary>
+  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+</summary>
+</member>
+<member name="P:程設期末專題.My.Resources.Resources.紅2bang">
+<summary>
+  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+</summary>
+</member>
+<member name="P:程設期末專題.My.Resources.Resources.紅2dead">
+<summary>
+  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+</summary>
+</member>
 <member name="P:程設期末專題.My.Resources.Resources.結算">
 <summary>
   查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
@@ -138,6 +168,36 @@
 </summary>
 </member>
 <member name="P:程設期末專題.My.Resources.Resources.藍_拿槍_翻轉">
+<summary>
+  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+</summary>
+</member>
+<member name="P:程設期末專題.My.Resources.Resources.藍1">
+<summary>
+  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+</summary>
+</member>
+<member name="P:程設期末專題.My.Resources.Resources.藍1bang">
+<summary>
+  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+</summary>
+</member>
+<member name="P:程設期末專題.My.Resources.Resources.藍1dead">
+<summary>
+  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+</summary>
+</member>
+<member name="P:程設期末專題.My.Resources.Resources.藍2">
+<summary>
+  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+</summary>
+</member>
+<member name="P:程設期末專題.My.Resources.Resources.藍2bang">
+<summary>
+  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+</summary>
+</member>
+<member name="P:程設期末專題.My.Resources.Resources.藍2dead">
 <summary>
   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
 </summary>

@@ -1,6 +1,8 @@
 ﻿Public Class Form2
-    '單機表單
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If Not Form1.isMuted Then
+            My.Computer.Audio.Play(My.Resources.GameMusic, AudioPlayMode.BackgroundLoop)
+        End If
 
     End Sub
 
@@ -30,11 +32,10 @@
         Me.Close()
     End Sub
 
-    Private isMuted As Boolean = False
-    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
-        isMuted = Not isMuted
 
-        If isMuted Then
+    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
+        Form1.isMuted = Not Form1.isMuted
+        If Form1.isMuted Then
             My.Computer.Audio.Stop()
         Else
             My.Computer.Audio.Play(My.Resources.GameMusic, AudioPlayMode.BackgroundLoop)
