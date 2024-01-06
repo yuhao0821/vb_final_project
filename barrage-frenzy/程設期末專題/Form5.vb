@@ -1,7 +1,5 @@
 ﻿Public Class Form5
-    Private Sub Form5_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        My.Computer.Audio.Play(My.Resources.GameMusic, AudioPlayMode.BackgroundLoop)
-    End Sub
+
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 

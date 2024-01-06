@@ -1,7 +1,7 @@
 ﻿Public Class Form2
     '單機表單
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        My.Computer.Audio.Play(My.Resources.GameMusic, AudioPlayMode.BackgroundLoop)
+
     End Sub
 
 

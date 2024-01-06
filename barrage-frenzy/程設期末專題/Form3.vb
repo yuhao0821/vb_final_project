@@ -360,7 +360,7 @@
             move_direaction = False
             IsKeyPressing = True
             If movable Then
-                My.Computer.Audio.Play(My.Resources.moving, AudioPlayMode.Background)
+
                 face_direaction(round) = False
                 If player(round).Tag = 1 Then
                     player(round).Image = My.Resources.藍_拿槍_翻轉
@@ -375,7 +375,7 @@
             move_direaction = True
             IsKeyPressing = True
             If movable Then
-                My.Computer.Audio.Play(My.Resources.moving, AudioPlayMode.Background)
+
                 face_direaction(round) = True
                 If player(round).Tag = 1 Then
                     player(round).Image = My.Resources.藍_拿槍
@@ -409,16 +409,19 @@
 
     Private Sub Form3_KeyUp(sender As Object, e As KeyEventArgs) Handles MyBase.KeyUp
         If e.KeyCode = 37 Then '左
+            My.Computer.Audio.Play(My.Resources.moving, AudioPlayMode.Background)
             IsKeyPressing = False
             move_timer.Stop()
 
         ElseIf e.KeyCode = 39 Then '右
+            My.Computer.Audio.Play(My.Resources.moving, AudioPlayMode.Background)
             IsKeyPressing = False
             move_timer.Stop()
 
         End If
 
         If e.KeyCode = 32 Then '空白鍵
+            My.Computer.Audio.Play(My.Resources.shooting, AudioPlayMode.Background)
             IsKeyPressing = False
             shoot_x = player(round).Location.X + 25
             shoot_y = player(round).Location.Y
@@ -456,7 +459,7 @@
     End Sub
 
     Public Sub Form3_close(sender As Object, e As EventArgs) Handles MyBase.Closed
-        Form1.Close()
+        Form8.Close()
     End Sub
 
     Private Sub Gravity_Timer_Tick(sender As Object, e As EventArgs) Handles Gravity_Timer.Tick
@@ -493,8 +496,7 @@
 
         If isMuted Then
             My.Computer.Audio.Stop()
-        Else
-            My.Computer.Audio.Play(My.Resources.GameMusic, AudioPlayMode.BackgroundLoop)
+
         End If
     End Sub
 End Class

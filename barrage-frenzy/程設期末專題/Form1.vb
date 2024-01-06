@@ -1,4 +1,5 @@
 ﻿Public Class Form1
+    Public isMuted As Boolean = False
     Private Sub Game_start(sender As Object, e As EventArgs) Handles start.Click
         Form2.Show()
         Me.Hide()
@@ -12,7 +13,7 @@
         My.Computer.Audio.Play(My.Resources.GameMusic, AudioPlayMode.BackgroundLoop)
     End Sub
 
-    Private isMuted As Boolean = False
+
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         isMuted = Not isMuted
 

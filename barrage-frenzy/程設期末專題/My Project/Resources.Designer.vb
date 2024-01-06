@@ -81,6 +81,15 @@ Namespace My.Resources
         '''<summary>
         '''  查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
         '''</summary>
+        Friend ReadOnly Property jump() As System.IO.UnmanagedMemoryStream
+            Get
+                Return ResourceManager.GetStream("jump", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
+        '''</summary>
         Friend ReadOnly Property moving() As System.IO.UnmanagedMemoryStream
             Get
                 Return ResourceManager.GetStream("moving", resourceCulture)

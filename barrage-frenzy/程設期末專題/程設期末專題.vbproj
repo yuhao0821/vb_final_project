@@ -255,6 +255,9 @@
     <None Include="Resources\結算.wav" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\jump.wav" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\moving.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
