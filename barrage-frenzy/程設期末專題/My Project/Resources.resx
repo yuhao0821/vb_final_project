@@ -145,8 +145,14 @@
   <data name="地圖1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\地圖1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="墓碑" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\墓碑.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="柱子" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\柱子.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="灰機" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\灰機.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="玩家提示" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\玩家提示.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,6 +172,24 @@
   <data name="箱子" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\箱子.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="紅1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\紅1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="紅1bang" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\紅1bang.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="紅1dead" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\紅1dead.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="紅2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\紅2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="紅2bang" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\紅2bang.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="紅2dead" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\紅2dead.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="紅_bang" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\紅 bang.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -180,6 +204,24 @@
   </data>
   <data name="背景" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\背景.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="藍1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\藍1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="藍1bang" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\藍1bang.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="藍1dead" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\藍1dead.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="藍2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\藍2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="藍2bang" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\藍2bang.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="藍2dead" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\藍2dead.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="藍_bang" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\藍 bang.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
