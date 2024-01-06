@@ -30,3 +30,5 @@
 2024/1/5
 	gravity done 
 	debug 育豪
+2024/1/6
+	character picture upload 致得
