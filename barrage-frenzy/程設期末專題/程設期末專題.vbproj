@@ -501,9 +501,6 @@
     <None Include="Resources\mute.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\地圖2.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\藍2dead.png" />
   </ItemGroup>
   <ItemGroup>
@@ -529,6 +526,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\藍2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\地圖2背景.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\地圖3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\地圖3前景.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\地圖3背景.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\地圖2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

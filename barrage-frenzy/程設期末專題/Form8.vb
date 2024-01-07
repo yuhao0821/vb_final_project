@@ -12,6 +12,11 @@
         Form3.Show()
         Me.Close()
     End Sub
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        Form3.Scenes3_create()
+        Form3.Show()
+        Me.Close()
+    End Sub
 
 
 
@@ -29,7 +34,7 @@
                 Form3.Show()
                 Me.Close()
             Case 3
-                Form3.scene_num = 28
+                Form3.Scenes3_create()
                 Form3.Show()
                 Me.Close()
         End Select
@@ -58,10 +63,6 @@
             My.Computer.Audio.Play(My.Resources.GameMusic, AudioPlayMode.BackgroundLoop)
         End If
         PictureBox5.BackColor = Color.Transparent
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) 
-
     End Sub
 
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click

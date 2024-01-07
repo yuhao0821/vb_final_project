@@ -178,6 +178,46 @@ Namespace My.Resources
         '''<summary>
         '''  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         '''</summary>
+        Public ReadOnly Property 地圖2背景() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("地圖2背景", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        '''</summary>
+        Public ReadOnly Property 地圖3() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("地圖3", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        '''</summary>
+        Public ReadOnly Property 地圖3前景() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("地圖3前景", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        '''</summary>
+        Public ReadOnly Property 地圖3背景() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("地圖3背景", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        '''</summary>
         Public ReadOnly Property 柱子() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("柱子", resourceCulture)

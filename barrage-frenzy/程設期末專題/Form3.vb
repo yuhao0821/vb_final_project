@@ -130,7 +130,6 @@
             alive(i) = True
         Next i
 
-        PictureBox1.BackColor = Color.Transparent
 
         Initialization()
         now_player.Enabled = True
@@ -185,6 +184,9 @@
 
     End Sub
     Sub Scenes2_create() '生成場景，由前一個表單呼叫
+        Me.BackgroundImage = My.Resources.地圖2背景
+        Me.BackgroundImageLayout = ImageLayout.Stretch
+
         scene_num = 24
         ReDim scenes(scene_num)
 
@@ -228,6 +230,18 @@
         scenes(scene_num).Height = 80
         Me.Controls.Add(scenes(scene_num))
 
+    End Sub
+    Sub Scenes3_create() '生成場景，由前一個表單呼叫
+        Me.BackgroundImage = My.Resources.地圖3背景
+        Me.BackgroundImageLayout = ImageLayout.Stretch
+
+        Dim ground3 As New PictureBox
+        ground3.Image = My.Resources.地圖3前景
+        ground3.SizeMode = PictureBoxSizeMode.StretchImage
+        ground3.Location = New Point(0, 370)
+        ground3.Width = 800
+        ground3.Height = 80
+        Me.Controls.Add(ground3)
     End Sub
     Sub GameBody() '初始化，因為直接在timer裡初始化的話，可能會一次初始化好幾次導致回合數亂掉，
         '           所以用count讓初始化可以只運行一次，並做遊戲是否結束的檢測
@@ -413,25 +427,6 @@
         If movable And airplane = False And airplane_times(round) > 0 Then
             airplane = True
             airplane_times(round) -= 1
-        End If
-    End Sub
-
-
-
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click '靜音按鈕控制
-        If currentImage = 1 Then
-            PictureBox1.Image = My.Resources.mute
-            currentImage = 2
-        Else
-            PictureBox1.Image = My.Resources.music
-            currentImage = 1
-        End If
-
-        Form1.isMuted = Not Form1.isMuted
-        If Form1.isMuted Then
-            My.Computer.Audio.Stop()
-        Else
-            My.Computer.Audio.Play(My.Resources.GameMusic, AudioPlayMode.BackgroundLoop)
         End If
     End Sub
 

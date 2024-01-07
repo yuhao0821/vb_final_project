@@ -28,26 +28,28 @@ Partial Class Form8
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PictureBox4
         '
         Me.PictureBox4.Image = Global.程設期末專題.My.Resources.Resources.questionmark
-        Me.PictureBox4.Location = New System.Drawing.Point(356, 330)
+        Me.PictureBox4.Location = New System.Drawing.Point(473, 335)
         Me.PictureBox4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(140, 138)
+        Me.PictureBox4.Size = New System.Drawing.Size(133, 125)
         Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox4.TabIndex = 9
         Me.PictureBox4.TabStop = False
         '
         'PictureBox2
         '
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Image = Global.程設期末專題.My.Resources.Resources.地圖2
         Me.PictureBox2.Location = New System.Drawing.Point(473, 169)
         Me.PictureBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PictureBox2.Name = "PictureBox2"
@@ -90,12 +92,23 @@ Partial Class Form8
         Me.Label1.Text = "場景破壞:關"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
+        'PictureBox3
+        '
+        Me.PictureBox3.Image = Global.程設期末專題.My.Resources.Resources.地圖3
+        Me.PictureBox3.Location = New System.Drawing.Point(243, 335)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(133, 125)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 12
+        Me.PictureBox3.TabStop = False
+        '
         'Form8
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.程設期末專題.My.Resources.Resources.select_map
         Me.ClientSize = New System.Drawing.Size(891, 599)
+        Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox5)
         Me.Controls.Add(Me.PictureBox4)
@@ -108,6 +121,7 @@ Partial Class Form8
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -118,4 +132,5 @@ Partial Class Form8
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents PictureBox3 As PictureBox
 End Class
