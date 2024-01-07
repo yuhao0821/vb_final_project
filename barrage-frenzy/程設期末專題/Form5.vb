@@ -36,9 +36,4 @@
             My.Computer.Audio.Play(My.Resources.GameMusic, AudioPlayMode.BackgroundLoop)
         End If
     End Sub
-
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-        Form2.Show()
-        Me.Close()
-    End Sub
 End Class
