@@ -99,6 +99,26 @@ Namespace My.Resources
         '''<summary>
         '''  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         '''</summary>
+        Public ReadOnly Property music() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("music", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        '''</summary>
+        Public ReadOnly Property mute() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("mute", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        '''</summary>
         Public ReadOnly Property questionmark() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("questionmark", resourceCulture)
@@ -141,6 +161,16 @@ Namespace My.Resources
         Public ReadOnly Property 地圖1() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("地圖1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        '''</summary>
+        Public ReadOnly Property 地圖2() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("地圖2", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

@@ -480,19 +480,40 @@
     <None Include="Resources\藍2dead21.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\紅1.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\紅1bang.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\紅1dead.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\紅2.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\紅2bang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍1bang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍2bang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bullet hit.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\music.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mute.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\地圖2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍2dead.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\紅1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\紅1dead.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\紅2dead.png" />
@@ -501,22 +522,10 @@
     <None Include="Resources\藍1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\藍1bang.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\藍1dead.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\藍2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\藍2bang.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\藍2dead.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Bullet hit.wav" />
+    <None Include="Resources\紅2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

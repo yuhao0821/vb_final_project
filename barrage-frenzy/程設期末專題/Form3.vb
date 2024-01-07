@@ -51,6 +51,7 @@
     Dim is_falling As Boolean
 
     Dim PictureBox_temp As PictureBox
+    Dim currentImage As Integer = 1
 
     Dim maxX1 As Integer
     Dim minX1 As Integer
@@ -128,6 +129,8 @@
             airplane_times(i) = 3
             alive(i) = True
         Next i
+
+        PictureBox1.BackColor = Color.Transparent
 
         Initialization()
         now_player.Enabled = True
@@ -416,6 +419,14 @@
 
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click '靜音按鈕控制
+        If currentImage = 1 Then
+            PictureBox1.Image = My.Resources.mute
+            currentImage = 2
+        Else
+            PictureBox1.Image = My.Resources.music
+            currentImage = 1
+        End If
+
         Form1.isMuted = Not Form1.isMuted
         If Form1.isMuted Then
             My.Computer.Audio.Stop()

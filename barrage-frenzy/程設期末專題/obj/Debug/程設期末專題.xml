@@ -42,6 +42,16 @@
   查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
 </summary>
 </member>
+<member name="P:程設期末專題.My.Resources.Resources.music">
+<summary>
+  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+</summary>
+</member>
+<member name="P:程設期末專題.My.Resources.Resources.mute">
+<summary>
+  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+</summary>
+</member>
 <member name="P:程設期末專題.My.Resources.Resources.questionmark">
 <summary>
   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
@@ -63,6 +73,11 @@
 </summary>
 </member>
 <member name="P:程設期末專題.My.Resources.Resources.地圖1">
+<summary>
+  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+</summary>
+</member>
+<member name="P:程設期末專題.My.Resources.Resources.地圖2">
 <summary>
   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
 </summary>

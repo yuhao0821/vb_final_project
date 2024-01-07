@@ -1,5 +1,6 @@
 ﻿Public Class Form8
     Dim rand As New Random()
+    Dim currentImage As Integer = 1
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         Form3.Scenes1_create()
         Form3.Show()
@@ -36,6 +37,14 @@
 
 
     Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
+        If currentImage = 1 Then
+            PictureBox5.Image = My.Resources.mute
+            currentImage = 2
+        Else
+            PictureBox5.Image = My.Resources.music
+            currentImage = 1
+        End If
+
         Form1.isMuted = Not Form1.isMuted
         If Form1.isMuted Then
             My.Computer.Audio.Stop()
@@ -48,6 +57,7 @@
         If Not Form1.isMuted Then
             My.Computer.Audio.Play(My.Resources.GameMusic, AudioPlayMode.BackgroundLoop)
         End If
+        PictureBox5.BackColor = Color.Transparent
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) 
