@@ -39,5 +39,6 @@
 2024/1/7
 	character direction update
 	map3 done
-	map2 background update 致得
+	map2 background update 
+	form optimization 致得
 	all picture art done 秋妶
