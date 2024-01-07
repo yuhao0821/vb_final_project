@@ -37,5 +37,7 @@
 2024/1/7
 	integrate 育豪
 2024/1/7
-	character direction update 致得
+	character direction update
+	map3 done
+	map2 background update 致得
 	all picture art done 秋妶
