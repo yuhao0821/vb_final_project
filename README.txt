@@ -38,3 +38,4 @@
 	integrate 育豪
 2024/1/7
 	character direction update 致得
+	all picture art done 秋妶
