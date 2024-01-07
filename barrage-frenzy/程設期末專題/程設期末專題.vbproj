@@ -504,9 +504,6 @@
     <None Include="Resources\地圖2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\藍2.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\藍2dead.png" />
   </ItemGroup>
   <ItemGroup>
@@ -525,7 +522,13 @@
     <None Include="Resources\藍1dead.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\紅2 .png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\紅2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\藍2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
