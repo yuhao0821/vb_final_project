@@ -17,23 +17,21 @@
         Form3.Show()
         Me.Close()
     End Sub
-
-
-
     Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
-        Dim randomNumber As Integer = rand.Next(1, 3) ' 生成 1 到 2 之間的隨機數
+        Dim randomNumber As Integer = rand.Next(0, 999)
+        Dim remainder As Integer = randomNumber Mod 3
 
-        ' 根據隨機數顯示對應的地圖Form
-        Select Case randomNumber
-            Case 1
+        ' 根據隨機數顯示對應的地圖
+        Select Case remainder
+            Case 0
                 Form3.Scenes1_create()
                 Form3.Show()
                 Me.Close()
-            Case 2
+            Case 1
                 Form3.Scenes2_create()
                 Form3.Show()
                 Me.Close()
-            Case 3
+            Case 2
                 Form3.Scenes3_create()
                 Form3.Show()
                 Me.Close()

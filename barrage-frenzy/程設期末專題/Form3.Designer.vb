@@ -133,6 +133,7 @@ Partial Class Form3
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1067, 562)
         Me.Controls.Add(Me.airplane_picturebox)
         Me.Controls.Add(Me.now_player)
@@ -142,8 +143,10 @@ Partial Class Form3
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.bullet)
         Me.Margin = New System.Windows.Forms.Padding(4)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Form3"
-        Me.Text = "Form3"
+        Me.Text = "Game"
         CType(Me.bullet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.show_power, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.now_player, System.ComponentModel.ISupportInitialize).EndInit()

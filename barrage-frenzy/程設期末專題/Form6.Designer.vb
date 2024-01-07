@@ -50,7 +50,7 @@ Partial Class Form6
         '
         Me.back.Font = New System.Drawing.Font("標楷體", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.back.Location = New System.Drawing.Point(807, 448)
-        Me.back.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.back.Margin = New System.Windows.Forms.Padding(4)
         Me.back.Name = "back"
         Me.back.Size = New System.Drawing.Size(171, 59)
         Me.back.TabIndex = 1
@@ -156,9 +156,11 @@ Partial Class Form6
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.back)
         Me.Controls.Add(Me.操作說明)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Form6"
-        Me.Text = "Form6"
+        Me.Text = "操作說明"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

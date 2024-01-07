@@ -387,6 +387,26 @@ Namespace My.Resources
         '''<summary>
         '''  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         '''</summary>
+        Public ReadOnly Property 結算1v1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("結算1v1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        '''</summary>
+        Public ReadOnly Property 結算2v2() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("結算2v2", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        '''</summary>
         Public ReadOnly Property 背景() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("背景", resourceCulture)

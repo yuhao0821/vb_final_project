@@ -542,5 +542,11 @@
   <ItemGroup>
     <None Include="Resources\地圖2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\結算1v1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\結算2v2.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
