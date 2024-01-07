@@ -31,6 +31,7 @@ Partial Class Form6
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         '操作說明
@@ -103,7 +104,7 @@ Partial Class Form6
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("微軟正黑體", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label5.Location = New System.Drawing.Point(56, 291)
+        Me.Label5.Location = New System.Drawing.Point(12, 273)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(278, 31)
         Me.Label5.TabIndex = 6
@@ -114,11 +115,22 @@ Partial Class Form6
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("微軟正黑體", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label6.Location = New System.Drawing.Point(457, 235)
+        Me.Label6.Location = New System.Drawing.Point(490, 189)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(243, 93)
         Me.Label6.TabIndex = 7
         Me.Label6.Text = "按a可使用道具紙飛機" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "可傳送到子彈的落點" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "每局限用三次"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.Font = New System.Drawing.Font("微軟正黑體", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.Label7.Location = New System.Drawing.Point(105, 358)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(494, 62)
+        Me.Label7.TabIndex = 8
+        Me.Label7.Text = "本遊戲卡頓程度較高，若遇移動時畫面卡住，" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "方向鍵不放，點一下↓即可恢復"
         '
         'Form6
         '
@@ -126,6 +138,7 @@ Partial Class Form6
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
@@ -149,4 +162,5 @@ Partial Class Form6
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
+    Friend WithEvents Label7 As Label
 End Class

@@ -1,6 +1,5 @@
 ﻿Public Class Form1
-    'Public isMuted As Boolean = False
-    Public isMuted As Boolean = True
+    Public isMuted As Boolean = False
     Private Sub Game_start(sender As Object, e As EventArgs) Handles start.Click
         Form2.Show()
         Me.Visible = False
