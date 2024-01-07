@@ -36,3 +36,5 @@
 
 2024/1/7
 	integrate 育豪
+2024/1/7
+	character direction update 致得
