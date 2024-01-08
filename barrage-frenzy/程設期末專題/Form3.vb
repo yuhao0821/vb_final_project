@@ -16,11 +16,8 @@ Public Class Form3
     Dim alive() As Boolean
     Dim scenes() As PictureBox
     Dim airplane_times() As Integer
-
     Dim player_deathimg(3) As Bitmap
 
-
-    Dim zero As Integer = 0
     Dim count As Integer = 0
     Dim check_count As Integer = -1
     Dim power As Integer = 0 '0~25
@@ -313,7 +310,7 @@ Public Class Form3
             round = real_round
         End If
         For i As Integer = 0 To player_num - 1
-            If alive(i) AndAlso player_health(i) <= zero Then
+            If alive(i) AndAlso player_health(i) <= 0 Then
                 If Not Form1.isMuted Then
                     My.Computer.Audio.Play(My.Resources.die, AudioPlayMode.Background)
                 End If
@@ -549,7 +546,7 @@ Public Class Form3
             Pressing_left = True
             If movable Then
                 If Not Form1.isMuted Then
-                    My.Computer.Audio.Play(My.Resources.moving, AudioPlayMode.BackgroundLoop)
+                    'My.Computer.Audio.Play(My.Resources.moving, AudioPlayMode.BackgroundLoop)
                 End If
                 face_direaction(round) = False
                 player(round).Image = player_img(round)
@@ -561,7 +558,7 @@ Public Class Form3
             Pressing_right = True
             If movable Then
                 If Not Form1.isMuted Then
-                    My.Computer.Audio.Play(My.Resources.moving, AudioPlayMode.BackgroundLoop)
+                    'My.Computer.Audio.Play(My.Resources.moving, AudioPlayMode.BackgroundLoop)
                 End If
                 face_direaction(round) = True
                 player(round).Image = player_img(round + 4)
@@ -589,7 +586,7 @@ Public Class Form3
     Private Sub Form3_KeyUp(sender As Object, e As KeyEventArgs) Handles MyBase.KeyUp '鍵盤控制事件
         If e.KeyCode = 37 Or e.KeyCode = 65 Then '左
             If Pressing_left Then
-                My.Computer.Audio.Stop()
+                'My.Computer.Audio.Stop()
                 Pressing_left = False
                 moving = False
             End If
@@ -597,7 +594,7 @@ Public Class Form3
             My.Computer.Audio.Stop()
         ElseIf e.KeyCode = 39 Or e.KeyCode = 68 Then '右
             If Pressing_right Then
-                My.Computer.Audio.Stop()
+                'My.Computer.Audio.Stop()
                 Pressing_right = False
                 moving = False
             End If

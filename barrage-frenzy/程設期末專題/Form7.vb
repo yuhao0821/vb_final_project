@@ -60,7 +60,7 @@ Public Class Form7
                     player_name(i).Location = New Point(62 * (i + 1) + 325, 150)
                     player_dmg(i).Location = New Point(62 * (i + 1) + 325, 220)
                     player_shoot_num(i).Location = New Point(62 * (i + 1) + 325, 290)
-                    player_hitting_rate(i).Location = New Point(62 * (i - 1) + 325, 350)
+                    player_hitting_rate(i).Location = New Point(62 * (i + 1) + 325, 350)
                 End If
 
             End If

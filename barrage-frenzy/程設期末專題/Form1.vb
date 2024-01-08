@@ -13,8 +13,7 @@
         'My.Computer.Audio.Play(My.Resources.GameMusic, AudioPlayMode.BackgroundLoop)
 
         My.Computer.Audio.Play(My.Resources.GameMusic, AudioPlayMode.BackgroundLoop)
-
-            PictureBox1.BackColor = Color.Transparent
+        PictureBox1.BackColor = Color.Transparent
     End Sub
 
 
