@@ -33,10 +33,12 @@ Partial Class Form3
         Me.now_player = New System.Windows.Forms.PictureBox()
         Me.fire_timer = New System.Windows.Forms.Timer(Me.components)
         Me.airplane_picturebox = New System.Windows.Forms.PictureBox()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         CType(Me.bullet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.show_power, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.now_player, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.airplane_picturebox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'global_timer
@@ -46,7 +48,7 @@ Partial Class Form3
         '
         Me.bullet.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.bullet.Location = New System.Drawing.Point(-1, -1)
-        Me.bullet.Margin = New System.Windows.Forms.Padding(4)
+        Me.bullet.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.bullet.Name = "bullet"
         Me.bullet.Size = New System.Drawing.Size(11, 10)
         Me.bullet.TabIndex = 1
@@ -80,7 +82,7 @@ Partial Class Form3
         Me.show_power.BackColor = System.Drawing.Color.Transparent
         Me.show_power.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.show_power.Location = New System.Drawing.Point(173, 500)
-        Me.show_power.Margin = New System.Windows.Forms.Padding(4)
+        Me.show_power.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.show_power.Name = "show_power"
         Me.show_power.Size = New System.Drawing.Size(0, 24)
         Me.show_power.TabIndex = 5
@@ -120,12 +122,23 @@ Partial Class Form3
         Me.airplane_picturebox.BackColor = System.Drawing.Color.Transparent
         Me.airplane_picturebox.Image = CType(resources.GetObject("airplane_picturebox.Image"), System.Drawing.Image)
         Me.airplane_picturebox.Location = New System.Drawing.Point(999, 160)
-        Me.airplane_picturebox.Margin = New System.Windows.Forms.Padding(4)
+        Me.airplane_picturebox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.airplane_picturebox.Name = "airplane_picturebox"
         Me.airplane_picturebox.Size = New System.Drawing.Size(67, 62)
         Me.airplane_picturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.airplane_picturebox.TabIndex = 11
         Me.airplane_picturebox.TabStop = False
+        '
+        'PictureBox5
+        '
+        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
+        Me.PictureBox5.Location = New System.Drawing.Point(-1, -1)
+        Me.PictureBox5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(45, 50)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox5.TabIndex = 12
+        Me.PictureBox5.TabStop = False
         '
         'Form3
         '
@@ -135,6 +148,7 @@ Partial Class Form3
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1067, 562)
+        Me.Controls.Add(Me.PictureBox5)
         Me.Controls.Add(Me.airplane_picturebox)
         Me.Controls.Add(Me.now_player)
         Me.Controls.Add(Me.Label2)
@@ -142,15 +156,16 @@ Partial Class Form3
         Me.Controls.Add(Me.airplane_label)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.bullet)
-        Me.Margin = New System.Windows.Forms.Padding(4)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Form3"
-        Me.Text = "Game"
+        Me.Text = "彈幕狂潮"
         CType(Me.bullet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.show_power, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.now_player, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.airplane_picturebox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -164,4 +179,5 @@ Partial Class Form3
     Friend WithEvents fire_timer As Timer
     Friend WithEvents airplane_picturebox As PictureBox
     Friend WithEvents global_timer As Timer
+    Friend WithEvents PictureBox5 As PictureBox
 End Class

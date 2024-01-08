@@ -1,22 +1,25 @@
-﻿Public Class Form3
+﻿Imports System.Net
 
-    Dim player() As PictureBox
+Public Class Form3
     Public player_name() As Label
-    Dim player_health_graph() As Label
-    Dim player_health() As Integer
     Public player_hit_num() As Integer
     Public player_shooting_num() As Integer
+    Public player_img(7) As Bitmap
+    Public player_num As Integer
+    Public scene_num As Integer = 0
+    Public scenes_break As Boolean = False
+
+    Dim player() As PictureBox
+    Dim player_health_graph() As Label
+    Dim player_health() As Integer
     Dim face_direaction() As Boolean
     Dim alive() As Boolean
     Dim scenes() As PictureBox
     Dim airplane_times() As Integer
-    Dim player_img(7) As Bitmap
+
     Dim player_deathimg(3) As Bitmap
-    Public scene_num As Integer = 0
-    Public scenes_break As Boolean = False
 
 
-    Public player_num As Integer
     Dim zero As Integer = 0
     Dim count As Integer = 0
     Dim check_count As Integer = -1
@@ -35,23 +38,18 @@
     Dim scene As Integer
     Dim shoot_player As Integer
 
-
-    Dim IsKeyPressing_left As Boolean = False
-    Dim IsKeyPressing_right As Boolean = False
-    Dim IsKeyPressing As Boolean = False
+    Dim Pressing_left As Boolean = False
+    Dim Pressing_right As Boolean = False
+    Dim Pressing_space As Boolean = False
     Dim move_direaction As Boolean
     Dim airplane As Boolean
     Dim moving As Boolean = False
-
-
     Dim gravity_enabled As Boolean = True
     Dim movable As Boolean
     Dim jumping As Boolean
     Dim counting As Boolean
     Dim is_falling As Boolean
-
     Dim PictureBox_temp As PictureBox
-    Dim currentImage As Integer = 1
 
     Dim maxX1 As Integer
     Dim minX1 As Integer
@@ -99,28 +97,21 @@
             Me.Controls.Add(player_name(i))
             Me.Controls.Add(player_health_graph(i))
             If i Mod 2 = 0 Then
-                player(i).Location = New Point(i * 100 + 50, 320)
-                player_name(i).Location = New Point(player(i).Location.X, player(i).Location.Y - 30)
                 player(i).Tag = 1
                 player(i).Image = player_img(i + 4)
-
             Else
-                player(i).Location = New Point(ClientSize.Width - (i) * 100, 320)
-                player_name(i).Location = New Point(player(i).Location.X, player(i).Location.Y - 30)
                 player(i).Tag = 0
                 player(i).Image = player_img(i)
             End If
 
-            player(i).Width = 50
-            player(i).Height = 50
+            player(i).Size = New Size(50, 50)
             player(i).BackColor = Color.Transparent
             player(i).SizeMode = PictureBoxSizeMode.StretchImage
             player_name(i).AutoSize = True
             player_name(i).BackColor = Color.Transparent
-            player_health_graph(i).Width = 50
-            player_health_graph(i).Height = 13
-            player_health_graph(i).Location = New Point(player(i).Location.X, player(i).Location.Y - 15)
-            player_health_graph(i).Text = "100 / 100"
+            player_health_graph(i).Size = New Size(55, 13)
+
+            player_health_graph(i).Text = 100
             player_health_graph(i).BackColor = Color.Orange
             player_health(i) = 100
             player_hit_num(i) = 0
@@ -130,10 +121,17 @@
             alive(i) = True
         Next i
 
-
         Initialization()
         now_player.Enabled = True
         global_timer.Enabled = True
+        If Form1.isMuted Then
+            My.Computer.Audio.Stop()
+            PictureBox5.Image = My.Resources.mute
+        Else
+            My.Computer.Audio.Play(My.Resources.GameMusic, AudioPlayMode.BackgroundLoop)
+            PictureBox5.Image = My.Resources.music
+        End If
+        PictureBox5.BackColor = Color.Transparent
     End Sub
 
 
@@ -182,14 +180,24 @@
         scenes(scene_num).Height = 80
         Me.Controls.Add(scenes(scene_num))
 
+        For i As Integer = 0 To player_num - 1  '將角色放置在起始位置
+            If i Mod 2 = 0 Then '0 2
+                player(i).Location = New Point(i * 25 + 50, 320 - i * 85)
+                player_name(i).Location = New Point(player(i).Location.X, player(i).Location.Y - 30)
+                player_health_graph(i).Location = New Point(player(i).Location.X, player(i).Location.Y - 15)
+            Else '1 3
+                player(i).Location = New Point(ClientSize.Width - 100 - (i - 1) * 25, 320 - (i - 1) * 85)
+                player_name(i).Location = New Point(player(i).Location.X, player(i).Location.Y - 30)
+                player_health_graph(i).Location = New Point(player(i).Location.X, player(i).Location.Y - 15)
+            End If
+        Next i
+        now_player.Location = New Point(player(round).Location.X + 10, player(round).Location.Y - 60)
     End Sub
     Sub Scenes2_create() '生成場景，由前一個表單呼叫
         Me.BackgroundImage = My.Resources.地圖2背景
         Me.BackgroundImageLayout = ImageLayout.Stretch
-
         scene_num = 24
         ReDim scenes(scene_num)
-
         scene = 2
         While temp < scene_num
             scenes(temp) = New PictureBox
@@ -230,30 +238,52 @@
         scenes(scene_num).Height = 80
         Me.Controls.Add(scenes(scene_num))
 
+        For i As Integer = 0 To player_num - 1  '將角色放置在起始位置
+            If i Mod 2 = 0 Then
+                player(i).Location = New Point(i * 50 + 50, 260 - i * 30)
+                player_name(i).Location = New Point(player(i).Location.X, player(i).Location.Y - 30)
+                player_health_graph(i).Location = New Point(player(i).Location.X, player(i).Location.Y - 15)
+            Else
+                player(i).Location = New Point(ClientSize.Width - 100 - (i - 1) * 50, 260 - (i - 1) * 30)
+                player_name(i).Location = New Point(player(i).Location.X, player(i).Location.Y - 30)
+                player_health_graph(i).Location = New Point(player(i).Location.X, player(i).Location.Y - 15)
+            End If
+        Next i
+        now_player.Location = New Point(player(round).Location.X + 10, player(round).Location.Y - 60)
     End Sub
     Sub Scenes3_create() '生成場景，由前一個表單呼叫
         Me.BackgroundImage = My.Resources.地圖3背景
         Me.BackgroundImageLayout = ImageLayout.Stretch
+        scene_num = 0
+        ReDim scenes(scene_num)
+        scenes(scene_num) = New PictureBox
+        scenes(scene_num).Image = My.Resources.地圖3前景
+        scenes(scene_num).SizeMode = PictureBoxSizeMode.StretchImage
+        scenes(scene_num).Location = New Point(0, 370)
+        scenes(scene_num).Width = 800
+        scenes(scene_num).Height = 80
+        Me.Controls.Add(scenes(scene_num))
 
-        Dim ground3 As New PictureBox
-        ground3.Image = My.Resources.地圖3前景
-        ground3.SizeMode = PictureBoxSizeMode.StretchImage
-        ground3.Location = New Point(0, 370)
-        ground3.Width = 800
-        ground3.Height = 80
-        Me.Controls.Add(ground3)
+        For i As Integer = 0 To player_num - 1  '將角色放置在起始位置
+            If i Mod 2 = 0 Then
+                player(i).Location = New Point(i * 100 + 50, 320)
+                player_name(i).Location = New Point(player(i).Location.X, player(i).Location.Y - 30)
+                player_health_graph(i).Location = New Point(player(i).Location.X, player(i).Location.Y - 15)
+            Else
+                player(i).Location = New Point(ClientSize.Width - (i) * 100, 320)
+                player_name(i).Location = New Point(player(i).Location.X, player(i).Location.Y - 30)
+                player_health_graph(i).Location = New Point(player(i).Location.X, player(i).Location.Y - 15)
+            End If
+        Next i
+        now_player.Location = New Point(player(round).Location.X + 10, player(round).Location.Y - 60)
     End Sub
     Sub GameBody() '初始化，因為直接在timer裡初始化的話，可能會一次初始化好幾次導致回合數亂掉，
         '           所以用count讓初始化可以只運行一次，並做遊戲是否結束的檢測
         If count = 0 Then
             Initialization()
             If Winning_check() Then
-                If MsgBox("是否再來一局?", 4, "遊戲結束") = 6 Then
-                    Form7.Show()
-                    Me.Close()
-                Else
-                    Form1.Close()
-                End If
+                Form7.Show()
+                Me.Close()
             End If
         End If
     End Sub
@@ -270,7 +300,9 @@
         bullet.Location = New Point(-1, -1)
         jumping = False
         airplane = False
-        IsKeyPressing = False
+        Pressing_left = False
+        Pressing_right = False
+        Pressing_space = False
         movable = True
         real_round += 1
         real_round = real_round Mod player_num
@@ -286,7 +318,7 @@
                     My.Computer.Audio.Play(My.Resources.die, AudioPlayMode.Background)
                 End If
                 player(i).Image = player_deathimg(i)
-                player(i).Location = New Point(player(i).Location.X, player(i).Location.Y + 15)
+                player(i).Location = New Point(player(i).Location.X, player(i).Location.Y)
                 player_health_graph(i).Visible = False
                 alive(i) = False
             End If
@@ -345,9 +377,10 @@
         If round = shoot_player Then
             For i As Integer = 0 To player_num - 1 '對象為玩家的碰撞檢測
                 If i <> shoot_player AndAlso airplane = False AndAlso player_health(i) > 0 AndAlso hit_detect(bullet, player(i)) AndAlso player(shoot_player).Tag <> player(i).Tag Then
-                    player_hit_num(shoot_player) += 25
+                    player_hit_num(shoot_player) += 1
                     player_health(i) -= 25
-                    player_health_graph(i).Text = player_health(i).ToString + " / 100"
+                    player_health_graph(i).Text = player_health(i).ToString
+                    player_health_graph(i).Size = New Size(player_health_graph(i).Size.Width - 12, player_health_graph(i).Size.Height)
                     If Not Form1.isMuted Then
                         My.Computer.Audio.Play(My.Resources.Bullet_hit, AudioPlayMode.Background)
                     End If
@@ -509,9 +542,9 @@
         y = bullet.Location.Y
     End Sub
     Private Sub Form3_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown '鍵盤控制事件
-        If e.KeyCode = 37 Then '左
+        If e.KeyCode = 37 Or e.KeyCode = 65 Then '左
             move_direaction = False
-            IsKeyPressing_left = True
+            Pressing_left = True
             If movable Then
                 If Not Form1.isMuted Then
                     My.Computer.Audio.Play(My.Resources.moving, AudioPlayMode.BackgroundLoop)
@@ -521,9 +554,9 @@
                 moving = True
             End If
 
-        ElseIf e.KeyCode = 39 Then '右
+        ElseIf e.KeyCode = 39 Or e.KeyCode = 68 Then '右
             move_direaction = True
-            IsKeyPressing_right = True
+            Pressing_right = True
             If movable Then
                 If Not Form1.isMuted Then
                     My.Computer.Audio.Play(My.Resources.moving, AudioPlayMode.BackgroundLoop)
@@ -534,7 +567,7 @@
             End If
         End If
 
-        If e.KeyCode = 38 And jumping = False And Not fall_detect(New Point(player(round).Location.X, player(round).Location.Y + 52)) And movable And jumping = False Then '上 跳
+        If (e.KeyCode = 38 Or e.KeyCode = 87) And jumping = False And Not fall_detect(New Point(player(round).Location.X, player(round).Location.Y + 52)) And movable And jumping = False Then '上 跳
             jumping_player = round
             jump_counter = 0
             gravity_enabled = False
@@ -544,31 +577,33 @@
         If e.KeyCode = 32 Then '空白鍵
             counting = True
             show_power.BackColor = Color.OrangeRed
-            IsKeyPressing = True
+            Pressing_space = True
         End If
-        If e.KeyCode = 65 Then 'a 紙飛機
+        If e.KeyCode = 16 Then 'shift 紙飛機
             airplane_Button_Click(airplane_label, New EventArgs)
         End If
     End Sub
 
     Private Sub Form3_KeyUp(sender As Object, e As KeyEventArgs) Handles MyBase.KeyUp '鍵盤控制事件
-        If e.KeyCode = 37 Then '左
-            If IsKeyPressing_left Then
+        If e.KeyCode = 37 Or e.KeyCode = 65 Then '左
+            If Pressing_left Then
                 My.Computer.Audio.Stop()
+                Pressing_left = False
+                moving = False
             End If
-            IsKeyPressing = False
-            moving = False
+
             My.Computer.Audio.Stop()
-        ElseIf e.KeyCode = 39 Then '右
-            If IsKeyPressing_right Then
+        ElseIf e.KeyCode = 39 Or e.KeyCode = 68 Then '右
+            If Pressing_right Then
                 My.Computer.Audio.Stop()
+                Pressing_right = False
+                moving = False
             End If
-            IsKeyPressing = False
-            moving = False
+
         End If
 
-        If e.KeyCode = 32 Then '空白鍵
-            IsKeyPressing = False
+        If e.KeyCode = 32 Or e.KeyCode = 65 And Pressing_space Then '空白鍵
+            Pressing_space = False
             shoot_x = player(round).Location.X + 25
             shoot_y = player(round).Location.Y
             shoot_player = round
@@ -583,6 +618,17 @@
             If Not Form1.isMuted Then
                 My.Computer.Audio.Play(My.Resources.shooting, AudioPlayMode.Background)
             End If
+        End If
+    End Sub
+
+    Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
+        Form1.isMuted = Not Form1.isMuted
+        If Form1.isMuted Then
+            My.Computer.Audio.Stop()
+            PictureBox5.Image = My.Resources.mute
+        Else
+            My.Computer.Audio.Play(My.Resources.GameMusic, AudioPlayMode.BackgroundLoop)
+            PictureBox5.Image = My.Resources.music
         End If
     End Sub
 End Class

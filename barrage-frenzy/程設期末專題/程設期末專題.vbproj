@@ -126,6 +126,7 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -528,25 +529,25 @@
     <None Include="Resources\藍2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\地圖2背景.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\地圖3.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\地圖3前景.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\地圖3背景.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\地圖2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\結算1v1.jpg" />
+    <None Include="Resources\地圖3背景.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\地圖2背景.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\結算2v2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\結算1v1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

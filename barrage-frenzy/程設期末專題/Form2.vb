@@ -1,8 +1,11 @@
 ﻿Public Class Form2
-    Dim currentImage As Integer = 1
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If Not Form1.isMuted Then
+        If Form1.isMuted Then
+            My.Computer.Audio.Stop()
+            PictureBox4.Image = My.Resources.mute
+        Else
             My.Computer.Audio.Play(My.Resources.GameMusic, AudioPlayMode.BackgroundLoop)
+            PictureBox4.Image = My.Resources.music
         End If
         PictureBox4.BackColor = Color.Transparent
     End Sub
@@ -14,7 +17,7 @@
         Form3.Show()
         Form3.Hide()
         Form4.Show()
-        Me.Hide()
+        Me.Close()
 
     End Sub
 
@@ -24,7 +27,7 @@
         Form3.Show()
         Form3.Hide()
         Form5.Show()
-        Me.Hide()
+        Me.Close()
 
     End Sub
 
@@ -35,19 +38,13 @@
 
 
     Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
-        If currentImage = 1 Then
-            PictureBox4.Image = My.Resources.mute
-            currentImage = 2
-        Else
-            PictureBox4.Image = My.Resources.music
-            currentImage = 1
-        End If
-
         Form1.isMuted = Not Form1.isMuted
         If Form1.isMuted Then
             My.Computer.Audio.Stop()
+            PictureBox4.Image = My.Resources.mute
         Else
             My.Computer.Audio.Play(My.Resources.GameMusic, AudioPlayMode.BackgroundLoop)
+            PictureBox4.Image = My.Resources.music
         End If
     End Sub
 End Class

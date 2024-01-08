@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class Form5
     Inherits System.Windows.Forms.Form
 
     'Form 覆寫 Dispose 以清除元件清單。
-    <System.Diagnostics.DebuggerNonUserCode()>
+    <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Form5
     '注意: 以下為 Windows Form 設計工具所需的程序
     '可以使用 Windows Form 設計工具進行修改。
     '請勿使用程式碼編輯器進行修改。
-    <System.Diagnostics.DebuggerStepThrough()>
+    <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form5))
         Me.Button1 = New System.Windows.Forms.Button()

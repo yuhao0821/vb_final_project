@@ -17,10 +17,12 @@
         Form3.Show()
         Me.Close()
     End Sub
+
+
+
     Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
         Dim randomNumber As Integer = rand.Next(0, 999)
         Dim remainder As Integer = randomNumber Mod 3
-
         ' 根據隨機數顯示對應的地圖
         Select Case remainder
             Case 0
@@ -40,19 +42,13 @@
 
 
     Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
-        If currentImage = 1 Then
-            PictureBox5.Image = My.Resources.mute
-            currentImage = 2
-        Else
-            PictureBox5.Image = My.Resources.music
-            currentImage = 1
-        End If
-
         Form1.isMuted = Not Form1.isMuted
         If Form1.isMuted Then
             My.Computer.Audio.Stop()
+            PictureBox5.Image = My.Resources.mute
         Else
             My.Computer.Audio.Play(My.Resources.GameMusic, AudioPlayMode.BackgroundLoop)
+            PictureBox5.Image = My.Resources.music
         End If
     End Sub
 

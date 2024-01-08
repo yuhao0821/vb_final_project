@@ -35,10 +35,13 @@
         music upload 思廷
 
 2024/1/7
-	integrate 育豪
-2024/1/7
+	settle form done 
+	main mechanism all done
+	function integrate 育豪
+
 	character direction update
 	map3 done
-	map2 background update 
-	form optimization 致得
+	map2 background update 致得
 	all picture art done 秋妶
+
+	final edition upload 育豪
