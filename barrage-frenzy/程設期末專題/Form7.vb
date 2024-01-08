@@ -51,10 +51,18 @@ Public Class Form7
                 Me.BackgroundImage = My.Resources.結算2v2
                 Me.BackgroundImageLayout = ImageLayout.Stretch
                 'player_picture(i).Location = New Point(125 * i + 200, 50)
-                player_name(i).Location = New Point(125 * i + 200, 150)
-                player_dmg(i).Location = New Point(125 * i + 200, 220)
-                player_shoot_num(i).Location = New Point(125 * i + 200, 290)
-                player_hitting_rate(i).Location = New Point(125 * i + 200, 350)
+                If i Mod 2 = 0 Then
+                    player_name(i).Location = New Point(62 * i + 200, 150)
+                    player_dmg(i).Location = New Point(62 * i + 200, 220)
+                    player_shoot_num(i).Location = New Point(62 * i + 200, 290)
+                    player_hitting_rate(i).Location = New Point(62 * i + 200, 350)
+                Else
+                    player_name(i).Location = New Point(62 * (i + 1) + 325, 150)
+                    player_dmg(i).Location = New Point(62 * (i + 1) + 325, 220)
+                    player_shoot_num(i).Location = New Point(62 * (i + 1) + 325, 290)
+                    player_hitting_rate(i).Location = New Point(62 * (i - 1) + 325, 350)
+                End If
+
             End If
 
             player_name(i).BackColor = Color.Transparent

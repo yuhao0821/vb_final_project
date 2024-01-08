@@ -370,6 +370,7 @@ Public Class Form3
         End While
         Dim route_y As Integer = (((route_x - temp) ^ 2) / 500) + (power * 15)
         Return route_y
+
     End Function
 
     Sub Bullet_check() '子彈的碰撞處理
@@ -526,7 +527,7 @@ Public Class Form3
             Label1.Text = 26 - pressing_time
         End If
     End Sub
-
+    '玩家移動、跳躍、計算蓄力值、控制重力
     Private Sub fire_timer_Tick(sender As Object, e As EventArgs) Handles fire_timer.Tick '控制子彈的彈道
         If face_direaction(round) Then
             bullet.Location = New Point(shoot_x + x, Route(x, pressing_time) - player(round).Height - (320 - shoot_y))
@@ -541,6 +542,7 @@ Public Class Form3
         check_count += 1
         y = bullet.Location.Y
     End Sub
+    '控制彈道
     Private Sub Form3_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown '鍵盤控制事件
         If e.KeyCode = 37 Or e.KeyCode = 65 Then '左
             move_direaction = False
